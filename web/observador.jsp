@@ -24,7 +24,13 @@
                         <form align="center" action="Obs" method="POST" class="tm-contact-form">                                
                             <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 tm-form-group-left">
                                 <label align="center" for="estudiante">Estudiante: </label>
-                                 
+                                <select name="Estudiante">
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                </select>
                                 <br>
                                 <button type="submit" class="btn tm-bordered-btn pull-xs-center">Buscar</button>
                                 <a class="btn tm-bordered-btn pull-xs-center" href="menu.jsp" role="button">Volver</a>
