@@ -1,4 +1,3 @@
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +7,7 @@
         <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-        <title>Menu Administrador</title>
+        <title>Gestion Estudiante</title>
 
         <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
         <meta name="viewport" content="width=device-width" />
@@ -49,3 +48,4 @@
     <!--  Paper Kit Initialization and functons -->
     <script src="assets/js/paper-kit.js?v=2.1.0"></script>
 </html>
+

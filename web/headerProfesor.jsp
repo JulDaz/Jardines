@@ -11,25 +11,25 @@
                 <div class="collapse navbar-collapse" id="navbarToggler">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a href="..." target="_blank" class="nav-link"><i class=" nc-icon nc-badge"></i>Ver Perfil</a>
+                            <a href="..."  class="nav-link"><i class=" nc-icon nc-badge"></i>Ver Perfil</a>
                         </li>
                         <li class="nav-item">
-                            <a href="..." target="_blank" class="nav-link"><i class="nc-icon nc-check-2"></i> Asistencia del Curso</a>
+                            <a href="..."  class="nav-link"><i class="nc-icon nc-check-2"></i> Asistencia del Curso</a>
                         </li>
                         <li class="nav-item">
-                            <a href="..." target="_blank" class="nav-link"><i class="nc-icon nc-book-bookmark"></i> Notas del Curso</a>
+                            <a href="..." class="nav-link"><i class="nc-icon nc-book-bookmark"></i> Notas del Curso</a>
                         </li>
                         <li class="nav-item">
-                            <a href="..." target="_blank" class="nav-link"><i class="nc-icon nc-paper"></i> Observador</a>
+                            <a href="..."  class="nav-link"><i class="nc-icon nc-paper"></i> Observador</a>
                         </li>  
                         <li class="nav-item">
-                            <a href="..." target="_blank" class="nav-link"><i class="nc-icon nc-bullet-list-67"></i> Gestion Tema</a>
+                            <a href="..."  class="nav-link"><i class="nc-icon nc-bullet-list-67"></i> Gestion Tema</a>
                         </li> 
                         <li class="nav-item">
-                            <a href="..." target="_blank" class="nav-link"><i class="nc-icon nc-chart-bar-32"></i> Retroalimentacion</a>
+                            <a href="..."  class="nav-link"><i class="nc-icon nc-chart-bar-32"></i> Retroalimentacion</a>
                         </li>
                         <li class="nav-item">
-                            <a href="..." target="_blank" class="nav-link"><i class="nc-icon nc-button-power"></i> Logout</a>
+                            <a href="..."  class="nav-link"><i class="nc-icon nc-button-power"></i> Logout</a>
                         </li>
                     </ul>
                 </div>
