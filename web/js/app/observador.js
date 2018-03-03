@@ -10,6 +10,9 @@
 //    return false;
 //});
 
+
+
+
 $('#curso').on('change', function () {
     $.ajax({
         type: 'GET',
