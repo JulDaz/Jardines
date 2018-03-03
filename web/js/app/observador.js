@@ -26,6 +26,40 @@ $('#botonVisualizar').click(function (){
     });
 });
 
+$('#botonRealizar').click(function (){
+    $.ajax({
+        type: 'GET',
+        url: "ObservadorS",
+        //force to handle it as text
+        data: {
+            'opcion': "0"
+        },
+        dataType: "text",
+        success: function (data) {
+            
+        },
+        async: false 
+    });
+});
+
+$('#botonCrear').on('submit', function () {
+    $.ajax({
+        type: 'POST',
+        url: "ObservadorS",
+        //force to handle it as text
+        data: {
+            'detalles': $('#'),
+            'calificacion' : $('#'),
+            'idEstudiante': $('#')
+        },
+        dataType: "text",
+        success: function (data) {
+            
+        },
+        async: false 
+    });
+});
+
 
 $('#curso').on('change', function () {
     $.ajax({
