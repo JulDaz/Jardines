@@ -29,7 +29,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 ml-auto mr-auto">
-                    <div class="card card-register">
+                    <div class="card card-register" style="background-color: grey">
                         <h3 class="title">Bienvenido</h3>
 
                         <form class="register-form">

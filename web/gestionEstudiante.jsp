@@ -27,6 +27,38 @@
     </head>
     <body style="background-color:black">
         <%@include file="headerAdmin.jsp" %>
+        <div class="container">
+            <div class="span12">&nbsp;</div>
+            <div class="span12">&nbsp;</div>
+            <div class="span12">&nbsp;</div>
+            <div class="span12">&nbsp;</div>
+            <br>
+            <br>
+            <br>
+            
+            <div class="col-md-4">
+                <a class href="">
+                    <button type="button" class="btn btn-default btn-round"> Crear Estudiante</button>
+                </a>
+                <br>
+                <br>
+                <a  href="">
+                    <button type="button" class="btn btn-default btn-round">Editar Estudiante</button>
+                </a>
+                <br>
+                <br>
+                <a  href="">
+                    <button   type="button" class="btn btn-default btn-round">Ver Estudiante</button>  
+                </a>
+                <br>
+                <br> 
+                <a  href="">
+                    <button   type="button" class="btn btn-default btn-round">Eliminar Estudiante</button>  
+                </a>
+                
+            </div>
+        </div>
+
 
 
 
