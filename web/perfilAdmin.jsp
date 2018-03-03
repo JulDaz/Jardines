@@ -27,7 +27,45 @@
     </head>
     <body style="background-color:black">
         <%@include file="headerAdmin.jsp" %>
+        <div class="container-fluid text-center">    
+            <div class="row content">
+                <div class="col-sm-2 sidenav">
 
+                </div>
+                <div class="col-sm-8 text-left"> 
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+
+                    <div class="container">
+
+                        <div class="form-group">
+                            <label style="color:white">Nombre:</label>
+                            <input  class="form-control form-control-success" name="nombre_profesor" readonly="readonly" value="">
+                        </div>
+                        <div class="form-group">
+                            <label style="color:white" >Usuario:</label>
+                            <input  class="form-control form-control-success" name="descripcion_profesor" readonly="readonly" value="">
+                        </div>
+                        <div class="form-group">
+                            <label style="color:white">Descripcion:</label>
+                            <input  class="form-control form-control-success" name="descripcion_profesor" readonly="readonly" value="">
+                        </div>
+                        <div class="form-group">
+                            <label style="color:white">Contacto:</label>
+                            <input  class="form-control form-control-success" name="contacto_profesor" readonly="readonly" value="">
+                        </div>
+
+                        <br>
+                        <br>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
 
     </body>
     <script src="assets/js/jquery-3.2.1.js" type="text/javascript"></script>

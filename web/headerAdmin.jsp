@@ -11,7 +11,7 @@
         <div class="collapse navbar-collapse" id="navbarToggler">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a href="perfilAdmin.jsp"  class="nav-link"><i class=" nc-icon nc-badge"></i>Ver Perfil</a>
+                    <a href="perfilAdmin.jsp"  class="nav-link" ><i class=" nc-icon nc-badge" ></i>Ver Perfil</a>
                 </li>
                 <li class="nav-item">
                     <a href="gestionEstudiante.jsp"  class="nav-link"><i class="nc-icon nc-circle-10"></i> Gestion Estudiante</a>

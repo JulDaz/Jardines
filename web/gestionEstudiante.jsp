@@ -27,37 +27,41 @@
     </head>
     <body style="background-color:black">
         <%@include file="headerAdmin.jsp" %>
-        <div class="container">
-            <div class="span12">&nbsp;</div>
-            <div class="span12">&nbsp;</div>
-            <div class="span12">&nbsp;</div>
-            <div class="span12">&nbsp;</div>
-            <br>
-            <br>
-            <br>
-            
-            <div class="col-md-4">
-                <a class href="">
-                    <button type="button" class="btn btn-default btn-round"> Crear Estudiante</button>
-                </a>
-                <br>
-                <br>
-                <a  href="">
-                    <button type="button" class="btn btn-default btn-round">Editar Estudiante</button>
-                </a>
-                <br>
-                <br>
-                <a  href="">
-                    <button   type="button" class="btn btn-default btn-round">Ver Estudiante</button>  
-                </a>
-                <br>
-                <br> 
-                <a  href="">
-                    <button   type="button" class="btn btn-default btn-round">Eliminar Estudiante</button>  
-                </a>
-                
+        <div class="container-fluid text-center">    
+            <div class="row content">
+                <div class="col-sm-2 sidenav">
+
+                </div>
+                <div class="col-sm-8 text-left"> 
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+
+                    <div class="container">
+                        <a class href="">
+                            <button type="button" class="btn btn-default btn-round"> Crear Estudiante</button>
+                        </a>
+                        <br>
+                        <br>
+                        <a  href="">
+                            <button type="button" class="btn btn-default btn-round">Editar Estudiante</button>
+                        </a>
+                        <br>
+                        <br>
+                        <a  href="">
+                            <button   type="button" class="btn btn-default btn-round">Ver Estudiante</button>  
+                        </a>
+                        <br>
+                        <br> 
+                        <a  href="">
+                            <button   type="button" class="btn btn-default btn-round">Eliminar Estudiante</button>  
+                        </a>
+                        
+                    </div>
+                </div>
             </div>
-        </div>
 
 
 
