@@ -30,7 +30,7 @@
             <div class="row">
                 <div class="col-md-4 ml-auto mr-auto">
                     <div class="card card-register" style="background-color: grey">
-                        <h3 class="title">Bienvenido</h3>
+                        <h3 class="title" style="color:white" >Bienvenido</h3>
 
                         <form class="register-form">
                             <label>Usuario:</label>
@@ -48,7 +48,7 @@
                                 </span>
                                 <input type="text" class="form-control" placeholder="Contraseña">
                             </div>
-                            <button class="btn btn-danger btn-block btn-round">Iniciar Sesion</button>
+                            <button class="btn btn-default btn-block btn-round">Iniciar Sesion</button>
                         </form>
                     </div>
 
