@@ -26,7 +26,7 @@ $('#estudiante').on('change', function() {
             selectForm.empty();
             for (var i = 0; i < json.length; ++i)
             {
-                var opcion=json[i].detalles+","+json[i].calificaciones;
+                var opcion=json[i].detalles+","+json[i].calificacion;
                 selectForm.append(opcion);
             }
         },
@@ -52,7 +52,7 @@ function consultarEstudiantes(curso){
             console.log(json);
             for (var i = 0; i < json.length; ++i)
             {
-                var opcion="<option value=\""+json[i].id_estudiante+"\">"+json[i].nombre_estudiante+"</option>"; 
+                var opcion="<option value=\""+json[i].idEstudiante+"\">"+json[i].nombre+"</option>"; 
                 selectForm.append(opcion);
             }
         },
