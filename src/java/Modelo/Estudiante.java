@@ -10,50 +10,96 @@ package Modelo;
  * @author FiJus
  */
 public class Estudiante {
-    private int id_estudiante;
-    private String nombre_estudiante;
-    private String contacto_estudiante;
-    private int id_curso;
-
-    public Estudiante(int id_estudiante, String nombre_estudiante, String contacto_estudiante, int id_curso) {
-        this.id_estudiante = id_estudiante;
-        this.nombre_estudiante = nombre_estudiante;
-        this.contacto_estudiante = contacto_estudiante;
-        this.id_curso = id_curso;
-    }
+    private int idEstudiante;
+    private String nombre;
+    private int celularContacto;
+    private String direccion;
+    private String fechaNacimiento;
+    private String rh;
+    private String tipoSangre;
+    private int idCurso;
 
     public Estudiante() {
     }
 
-    public int getId_estudiante() {
-        return id_estudiante;
+    public Estudiante(int idEstudiante, String nombre, int celularContacto, String direccion, String fechaNacimiento, String rh, String tipoSangre, int idCurso) {
+        this.idEstudiante = idEstudiante;
+        this.nombre = nombre;
+        this.celularContacto = celularContacto;
+        this.direccion = direccion;
+        this.fechaNacimiento = fechaNacimiento;
+        this.rh = rh;
+        this.tipoSangre = tipoSangre;
+        this.idCurso = idCurso;
     }
 
-    public void setId_estudiante(int id_estudiante) {
-        this.id_estudiante = id_estudiante;
+    public int getIdEstudiante() {
+        return idEstudiante;
     }
 
-    public String getNombre_estudiante() {
-        return nombre_estudiante;
+    public void setIdEstudiante(int idEstudiante) {
+        this.idEstudiante = idEstudiante;
     }
 
-    public void setNombre_estudiante(String nombre_estudiante) {
-        this.nombre_estudiante = nombre_estudiante;
+    public String getNombre() {
+        return nombre;
     }
 
-    public String getContacto_estudiante() {
-        return contacto_estudiante;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public void setContacto_estudiante(String contacto_estudiante) {
-        this.contacto_estudiante = contacto_estudiante;
+    public int getCelularContacto() {
+        return celularContacto;
     }
 
-    public int getId_curso() {
-        return id_curso;
+    public void setCelularContacto(int celularContacto) {
+        this.celularContacto = celularContacto;
     }
 
-    public void setId_curso(int id_curso) {
-        this.id_curso = id_curso;
+    public String getDireccion() {
+        return direccion;
     }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(String fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public String getRh() {
+        return rh;
+    }
+
+    public void setRh(String rh) {
+        this.rh = rh;
+    }
+
+    public String getTipoSangre() {
+        return tipoSangre;
+    }
+
+    public void setTipoSangre(String tipoSangre) {
+        this.tipoSangre = tipoSangre;
+    }
+
+    public int getIdCurso() {
+        return idCurso;
+    }
+
+    public void setIdCurso(int idCurso) {
+        this.idCurso = idCurso;
+    }
+    
+    
+    
+    
+
+  
 }

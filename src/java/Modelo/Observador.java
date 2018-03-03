@@ -10,35 +10,35 @@ package Modelo;
  * @author LabingXEON
  */
 public class Observador {
-    private int id_estudiante;
-    private int id_profesor;
+    private int idObs;
+    private int calificacion;
     private String detalles;
-    private int calificaciones;
-
-    public Observador(int id_estudiante, int id_profesor, String detalles, int calificaciones) {
-        this.id_estudiante = id_estudiante;
-        this.id_profesor = id_profesor;
-        this.detalles = detalles;
-        this.calificaciones = calificaciones;
-    }
+    private int idEstudiante;
 
     public Observador() {
     }
 
-    public int getId_estudiante() {
-        return id_estudiante;
+    public Observador(int idObs, int calificacion, String detalles, int idEstudiante) {
+        this.idObs = idObs;
+        this.calificacion = calificacion;
+        this.detalles = detalles;
+        this.idEstudiante = idEstudiante;
     }
 
-    public void setId_estudiante(int id_estudiante) {
-        this.id_estudiante = id_estudiante;
+    public int getIdObs() {
+        return idObs;
     }
 
-    public int getId_profesor() {
-        return id_profesor;
+    public void setIdObs(int idObs) {
+        this.idObs = idObs;
     }
 
-    public void setId_profesor(int id_profesor) {
-        this.id_profesor = id_profesor;
+    public int getCalificacion() {
+        return calificacion;
+    }
+
+    public void setCalificacion(int calificacion) {
+        this.calificacion = calificacion;
     }
 
     public String getDetalles() {
@@ -49,12 +49,14 @@ public class Observador {
         this.detalles = detalles;
     }
 
-    public int getCalificaciones() {
-        return calificaciones;
+    public int getIdEstudiante() {
+        return idEstudiante;
     }
 
-    public void setCalificaciones(int calificaciones) {
-        this.calificaciones = calificaciones;
+    public void setIdEstudiante(int idEstudiante) {
+        this.idEstudiante = idEstudiante;
     }
-
+    
+    
+    
 }
