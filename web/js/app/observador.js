@@ -10,7 +10,21 @@
 //    return false;
 //});
 
-
+$('#botonVisualizar').click(function (){
+    $.ajax({
+        type: 'GET',
+        url: "ObservadorS",
+        //force to handle it as text
+        data: {
+            'opcion': "0"
+        },
+        dataType: "text",
+        success: function (data) {
+            
+        },
+        async: false 
+    });
+});
 
 
 $('#curso').on('change', function () {
@@ -34,8 +48,6 @@ $('#curso').on('change', function () {
                 var opcion = "<option value=\"" + json[i].idEstudiante + "\">" + json[i].nombre + "</option>";
                 selectForm.append(opcion);
             }
-            var casilla = $('#SelectEstudiante');
-            casilla.removeClass('hidden-sm-up');
             selectForm.attr('required', false);
         },
         async: false

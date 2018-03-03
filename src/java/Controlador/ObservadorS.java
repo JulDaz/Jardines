@@ -5,9 +5,13 @@
  */
 package Controlador;
 
+import Dao.CursoDAO;
 import Dao.ObservadorDAO;
+import Dao.ProfesorCursoDAO;
+import Modelo.Curso;
 import Modelo.Estudiante;
 import Modelo.Observador;
+import Modelo.ProfesorCurso;
 import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -27,7 +31,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class ObservadorS extends HttpServlet {
 
-  /**
+    /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
      *
@@ -59,6 +63,20 @@ public class ObservadorS extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             int opc = Integer.parseInt(request.getParameter("opcion"));
+            if (opc == 0) {
+                int pi;
+                pi=544856;
+                ProfesorCursoDAO pc = new ProfesorCursoDAO();
+                ArrayList<ProfesorCurso> pcm = pc.getAllProCur(pi);
+                ArrayList<Curso> cursos=new ArrayList<>();
+                CursoDAO c=new CursoDAO();
+                for (ProfesorCurso profesorcurso : pcm) {                  
+                    cursos.add(c.getCursoById(profesorcurso.getIdCurso()));
+                }
+                Gson g = new Gson();
+                String pasareEsto = g.toJson(cursos);
+                out.print(pasareEsto);
+            }
             if (opc == 1) {
                 int a = Integer.parseInt(request.getParameter("curso"));
                 ObservadorDAO obs = new ObservadorDAO();
@@ -68,9 +86,9 @@ public class ObservadorS extends HttpServlet {
                 out.print(pasareEsto);
             }
             if (opc == 2) {
-                int estId=Integer.parseInt(request.getParameter("estudiante"));
-                ObservadorDAO obs=new ObservadorDAO();
-                ArrayList<Observador> observaciones=obs.getObservadorByID(estId);
+                int estId = Integer.parseInt(request.getParameter("estudiante"));
+                ObservadorDAO obs = new ObservadorDAO();
+                ArrayList<Observador> observaciones = obs.getObservadorByID(estId);
                 Gson g = new Gson();
                 String pasareEsto = g.toJson(observaciones);
                 out.print(pasareEsto);
