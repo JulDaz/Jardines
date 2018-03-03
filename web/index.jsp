@@ -1,3 +1,4 @@
+<%@page import="Modelo.Profesor"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,6 +27,7 @@
 
     </head>
     <body style="background-color:black">
+        
         <div class="container">
             <div class="row">
                 <div class="col-md-4 ml-auto mr-auto">
