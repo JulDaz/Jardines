@@ -26,9 +26,9 @@
 
     </head>
     <body style="background-color:black">
-       <%@include file="headerAdmin.jsp" %>
-       
-      
+        <%@include file="headerAdmin.jsp" %>
+
+
     </body>
     <script src="assets/js/jquery-3.2.1.js" type="text/javascript"></script>
     <script src="assets/js/jquery-ui-1.12.1.custom.min.js" type="text/javascript"></script>

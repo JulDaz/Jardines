@@ -1,8 +1,3 @@
-<%-- 
-    Document   : menu
-    Created on : 3/03/2018, 01:06:14 PM
-    Author     : anfeg
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -32,9 +27,9 @@
 
     </head>
     <body style="background-color:black">
-       <%@include file="headerProfesor.jsp" %>
-       
-      
+        <%@include file="headerProfesor.jsp" %>
+
+
     </body>
     <script src="assets/js/jquery-3.2.1.js" type="text/javascript"></script>
     <script src="assets/js/jquery-ui-1.12.1.custom.min.js" type="text/javascript"></script>
