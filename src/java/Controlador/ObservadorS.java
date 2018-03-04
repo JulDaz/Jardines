@@ -11,6 +11,7 @@ import Dao.ProfesorCursoDAO;
 import Modelo.Curso;
 import Modelo.Estudiante;
 import Modelo.Observador;
+import Modelo.Profesor;
 import Modelo.ProfesorCurso;
 import com.google.gson.Gson;
 import java.io.IOException;
@@ -64,11 +65,9 @@ public class ObservadorS extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             int opc = Integer.parseInt(request.getParameter("opcion"));
             if (opc == 0) {
-                int pi;
-                pi=544856;
-//                pi=2454525;
+                Profesor p=(Profesor)request.getSession().getAttribute("profesor");
                 ProfesorCursoDAO pc = new ProfesorCursoDAO();
-                ArrayList<ProfesorCurso> pcm = pc.getAllProCur(pi);
+                ArrayList<ProfesorCurso> pcm = pc.getAllProCur(p.getIdProfesor());
                 ArrayList<Curso> cursos=new ArrayList<>();
                 CursoDAO c=new CursoDAO();
                 for (ProfesorCurso profesorcurso : pcm) {                  
