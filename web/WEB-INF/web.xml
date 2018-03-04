@@ -12,6 +12,25 @@
         <servlet-name>Login</servlet-name>
         <servlet-class>Controlador.Login</servlet-class>
     </servlet>
+    
+    <servlet>
+        <servlet-name>AsistenciaS</servlet-name>
+        <servlet-class>Controlador.AsistenciaS</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AsistenciaS</servlet-name>
+        <url-pattern>/AsistenciaS</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>VerListaAsistenciaS</servlet-name>
+        <servlet-class>Controlador.VerListaAsistenciaS</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VerListaAsistenciaS</servlet-name>
+        <url-pattern>/VerListaAsistenciaS</url-pattern>
+    </servlet-mapping>
+    
     <servlet>
         <servlet-name>EstudianteS</servlet-name>
         <servlet-class>Controlador.EstudianteS</servlet-class>
