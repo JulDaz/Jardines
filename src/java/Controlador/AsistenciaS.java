@@ -64,13 +64,13 @@ public class AsistenciaS extends HttpServlet {
 
         try (PrintWriter out = response.getWriter()) {
 
-            Profesor p = (Profesor) request.getSession().getAttribute("profesor");
+         Profesor p = (Profesor) request.getSession().getAttribute("profesor");
       
                 int op = Integer.parseInt(request.getParameter("op"));
                 if (op == 0) {
                     int pi = p.getIdProfesor();
-                    System.out.println("Esteee" + pi);
-                    // int pi = 544856;
+                   // System.out.println("Esteee" + pi);
+                   // int pi = 544856;
                     ProfesorCursoDAO pc = new ProfesorCursoDAO();
                     ArrayList<ProfesorCurso> pcm = pc.getAllProCur(pi);
                     ArrayList<Curso> cursos = new ArrayList<>();
