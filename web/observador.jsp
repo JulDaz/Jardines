@@ -63,12 +63,12 @@
                             <div>
 
                                 <label style="color:white">Curso: </label>
-                                <select required name="curso" id="curso">
+                                <select class="form-control" required name="curso" id="curso">
                                     <option value="" selected disabled>Seleccione un curso</option>
                                 </select> 
                                 &nbsp;
                                 &nbsp;
-                                <label style="color:white" >Estudiante:</label>
+                                <label class="form-control" style="color:white" >Estudiante:</label>
                                 <select required name="estudiante" id="estudiante">
                                     <option value="" selected  disabled>Seleccione un estudiante</option>
                                 </select>   

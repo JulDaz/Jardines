@@ -67,10 +67,8 @@ public class ProfesorS extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             int cedula = Integer.parseInt(request.getParameter("cedula"));
-
             ProfesorDAO pc = new ProfesorDAO();
             Profesor pcm = pc.getProfesorById(cedula);
-
             Gson g = new Gson();
             String pasareEsto = g.toJson(pcm);
             out.print(pasareEsto);
@@ -95,7 +93,30 @@ public class ProfesorS extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            int cedula = Integer.parseInt(request.getParameter("cedula"));
+            String nombre = request.getParameter("nombre");
+            int tipoU = Integer.parseInt(request.getParameter("tipoU"));
+            String correo = request.getParameter("correo");
+            String celular = request.getParameter("celular");
+            String direccion = request.getParameter("direccion");
+            String estudios = request.getParameter("estudios");
+            String experiencia = request.getParameter("experiencia");
+            String fechaNacimiento = request.getParameter("fechanacimiento");
+            String tipoSangre = request.getParameter("tiposangre");
+            String rh = request.getParameter("rh");
+            String usuario = request.getParameter("usuario");
+            String contra = request.getParameter("contra");
+            ProfesorDAO p = new ProfesorDAO();
+            Profesor profe = new Profesor(cedula, nombre, tipoU, correo, celular, direccion, estudios, experiencia, fechaNacimiento, tipoSangre, rh, usuario, contra);
+            p.addProfesor(profe);
+        } catch (SQLException ex) {
+            Logger.getLogger(ProfesorS.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(ProfesorS.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ProfesorS.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

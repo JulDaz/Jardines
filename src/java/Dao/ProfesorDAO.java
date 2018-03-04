@@ -10,6 +10,7 @@ import Util.DbUtil;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -70,5 +71,23 @@ public class ProfesorDAO {
             profesores.add(pro);
         }
         return profesores;
+    }
+
+    public void addProfesor(Profesor profe) throws SQLException {
+        PreparedStatement preparedStatement = connection.prepareStatement("insert into profesor values (?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        preparedStatement.setInt(1, profe.getIdProfesor());
+        preparedStatement.setString(2, profe.getNombre());
+        preparedStatement.setInt(3, profe.getTipoU());
+        preparedStatement.setString(4, profe.getCorreo() );
+        preparedStatement.setString(5, profe.getCelular());
+        preparedStatement.setString(6,profe.getDireccion());
+        preparedStatement.setString(7, profe.getEstudios());
+        preparedStatement.setString(8, profe.getExperiencia());
+        preparedStatement.setString(9, profe.getFechaNacimiento());
+        preparedStatement.setString(10, profe.getTipoSangre());
+        preparedStatement.setString(11, profe.getRh());
+        preparedStatement.setString(12, profe.getUsuario());
+        preparedStatement.setString(13, profe.getPassword());
+        preparedStatement.executeUpdate();
     }
 }
