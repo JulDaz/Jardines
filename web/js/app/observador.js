@@ -140,6 +140,23 @@ $('#estudiante').on('change', function () {
     });
 });
 
+$('#AddObs').on('submit', function () {
+    $.ajax({
+        type: 'POST',
+        url: "ObservadorS",        
+        data: {
+            'detalles': $('#detalles').val(),
+            'calificacion': $('#calificacion').val(),
+            'idEstudiante': $('#estudiante').val()
+        },
+        dataType: "text",
+        success: function (data) {
+            
+        },
+        async: false
+    });
+});
+
 //function consultarEstudiantes(curso) {
 //    $.ajax({
 //        type: 'GET',
