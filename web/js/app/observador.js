@@ -25,7 +25,7 @@ $(document).ready(function () {
                 $('#AddObs').attr('style', 'display: none;');
                 var selectForm = $('#curso');
                 selectForm.empty();
-                selectForm.append('<option selected  value="" disabled>Seleccione un curso</option>');
+                    selectForm.append('<option selected  value="" disabled>Seleccione un curso</option>');
                 var json = $.parseJSON(data);
                 console.log(json);
                 for (var i = 0; i < json.length; ++i)

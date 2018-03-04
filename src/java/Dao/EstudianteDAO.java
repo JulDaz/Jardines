@@ -40,6 +40,23 @@ public class EstudianteDAO {
         }
         return estudiantes;
     }
+    
+    public Estudiante getEstudianteByID(int idEst) throws SQLException, URISyntaxException {
+        Estudiante estudiante= new Estudiante();
+        Statement statement = connection.createStatement();
+        ResultSet rs = statement.executeQuery("select * from estudiante where documento=" + idEst);
+        while (rs.next()) {
+            estudiante.setIdEstudiante(rs.getInt("documento"));
+            estudiante.setNombre(rs.getString("nombre"));
+            estudiante.setCelularContacto(rs.getString("celularcontacto"));
+            estudiante.setDireccion(rs.getString("direccion"));
+            estudiante.setFechaNacimiento(rs.getString("fechanacimiento"));
+            estudiante.setRh(rs.getString("rh"));
+            estudiante.setTipoSangre(rs.getString("tiposangre"));
+            estudiante.setIdCurso(rs.getInt("idcurso"));
+        }
+        return estudiante;
+    }
 
     public void addEstudiante(Estudiante est) throws SQLException {
         PreparedStatement preparedStatement = connection.prepareStatement("insert into estudiante values (?,?,?,?,?,?,?,?)");
