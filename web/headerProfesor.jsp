@@ -26,7 +26,7 @@
                     <a href="..."  class="nav-link"><i class="nc-icon nc-bullet-list-67"></i> Gestion Tema</a>
                 </li> 
                 <li class="nav-item">
-                    <a href="..."  class="nav-link"><i class="nc-icon nc-chart-bar-32"></i> Retroalimentacion</a>
+                    <a href="retroalimentacionEstudiante.jsp"  class="nav-link"><i class="nc-icon nc-chart-bar-32"></i> Retroalimentacion</a>
                 </li>
                 <li class="nav-item">
                     <a href="Login?action=salir" class="nav-link"><i class="nc-icon nc-button-power"></i> Logout</a>

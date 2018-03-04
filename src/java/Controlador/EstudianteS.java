@@ -5,13 +5,23 @@
  */
 package Controlador;
 
+
+
+import Dao.CursoDAO;
 import Dao.EstudianteDAO;
 import Dao.ObservadorDAO;
+import Dao.ProfesorCursoDAO;
+import Modelo.Curso;
 import Modelo.Estudiante;
+import Modelo.Observador;
+import Modelo.Profesor;
+import Modelo.ProfesorCurso;
+import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URISyntaxException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -63,7 +73,46 @@ public class EstudianteS extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            
+            int opc = Integer.parseInt(request.getParameter("opcion"));
+            if (opc == 0) {
+                Profesor p=(Profesor)request.getSession().getAttribute("profesor");
+                ProfesorCursoDAO pc = new ProfesorCursoDAO();
+                ArrayList<ProfesorCurso> pcm = pc.getAllProCur(p.getIdProfesor());
+                ArrayList<Curso> cursos=new ArrayList<>();
+                CursoDAO c=new CursoDAO();
+                for (ProfesorCurso profesorcurso : pcm) {                  
+                    cursos.add(c.getCursoById(profesorcurso.getIdCurso()));
+                }
+                Gson g = new Gson();
+                String pasareEsto = g.toJson(cursos);
+                out.print(pasareEsto);
+            }
+            if (opc == 1) {
+                int a = Integer.parseInt(request.getParameter("curso"));
+                EstudianteDAO obs = new EstudianteDAO();
+                ArrayList<Estudiante> estudiantes = obs.getEstudiantesByIDCurso(a);
+                Gson g = new Gson();
+                String pasareEsto = g.toJson(estudiantes);
+                out.print(pasareEsto);
+            }
+            if (opc == 2) {
+                int estId = Integer.parseInt(request.getParameter("estudiante"));
+                EstudianteDAO obs = new EstudianteDAO();
+                Estudiante e = obs.getEstudianteByID(estId);
+                Gson g = new Gson();
+                String pasareEsto = g.toJson(e);
+                out.print(pasareEsto);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(EstudianteS.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(EstudianteS.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(EstudianteS.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
