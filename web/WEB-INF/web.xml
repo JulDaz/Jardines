@@ -4,16 +4,24 @@
         <servlet-name>ObservadorS</servlet-name>
         <servlet-class>Controlador.ObservadorS</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ProfesorS</servlet-name>
+        <servlet-class>Controlador.ProfesorS</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ObservadorS</servlet-name>
         <url-pattern>/ObservadorS</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProfesorS</servlet-name>
+        <url-pattern>/ProfesorS</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
-    <welcome-file-list> 
+    <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 </web-app>
