@@ -5,7 +5,16 @@
  */
 package Controlador;
 
+import Dao.ProfesorDAO;
+import Modelo.Profesor;
+import com.google.gson.Gson;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.net.URISyntaxException;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -28,7 +37,7 @@ public class Login extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -43,9 +52,27 @@ public class Login extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String usuario=request.getParameter("usuarioL");
-        String password=request.getParameter("passwordL");
-        System.out.println(usuario+","+password);
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            String usuario = request.getParameter("usuario");
+            String password = request.getParameter("password");
+            ProfesorDAO pro = new ProfesorDAO();
+            ArrayList<Profesor> profesores = pro.getallProfesores();
+            for (Profesor p : profesores) {
+                if (p.getUsuario().equals(usuario) && p.getPassword().equals(password)) {
+                    request.getSession().setAttribute("profesor", p);
+                }
+            }
+            
+            out.print("error");
+        } catch (SQLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 
     /**

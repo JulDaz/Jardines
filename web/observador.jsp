@@ -6,7 +6,7 @@
     Profesor p=(Profesor)request.getSession().getAttribute("profesor");
     if(p!=null){
         if(p.getTipoU()==0){
-            response.sendRedirect("/menuAdmin.jsp");
+            response.sendRedirect("menuAdmin.jsp");
         }
     }else{
         response.sendRedirect("index.jsp");

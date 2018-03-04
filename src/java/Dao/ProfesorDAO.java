@@ -13,6 +13,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 /**
  *
@@ -45,5 +46,29 @@ public class ProfesorDAO {
             pro.setUsuario(rs.getString("usuario"));
         }
         return pro;
+    }
+
+    public ArrayList<Profesor> getallProfesores() throws SQLException {
+        ArrayList<Profesor> profesores = new ArrayList<>();
+        Statement statement = connection.createStatement();
+        ResultSet rs = statement.executeQuery("select * from profesor");
+        while (rs.next()) {
+            Profesor pro=new Profesor();
+            pro.setIdProfesor(rs.getInt("cedula"));
+            pro.setNombre(rs.getString("nombre"));
+            pro.setTipoU(rs.getInt("tipoU"));
+            pro.setCorreo(rs.getString("correo"));
+            pro.setCelular(rs.getString("celular"));
+            pro.setDireccion(rs.getString("direccion"));
+            pro.setEstudios(rs.getString("estudios"));
+            pro.setExperiencia(rs.getString("experiencia"));
+            pro.setFechaNacimiento(rs.getString("fechaNacimiento"));
+            pro.setTipoSangre(rs.getString("tipoSangre"));
+            pro.setRh(rs.getString("rh"));
+            pro.setUsuario(rs.getString("usuario"));
+            pro.setPassword(rs.getString("password"));
+            profesores.add(pro);
+        }
+        return profesores;
     }
 }

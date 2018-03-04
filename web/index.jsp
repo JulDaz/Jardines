@@ -6,13 +6,12 @@
         Profesor p = (Profesor) request.getSession().getAttribute("profesor");
         if (p != null) {
             if (p.getTipoU() == 0) {
-                response.sendRedirect("/menuAdmin.jsp");
+                response.sendRedirect("menuAdmin.jsp");
             } else {
-                response.sendRedirect("/menuProfesor.jsp");
+                response.sendRedirect("menuProfesor.jsp");
             }
         }
     %>
-  <html lang="en">
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/png" href="assets/img/colegio.ico">
@@ -44,13 +43,13 @@
                     <div class="card card-register">
                         <h3 class="title">Bienvenido</h3>
 
-                        <form class="register-form">
+                        <form class="register-form" id="ingreso">
                             <label>Usuario:</label>
                             <div class="input-group form-group-no-border">
                                 <span class="input-group-addon">
                                     <i class="nc-icon nc-single-02"></i>
                                 </span>
-                                <input type="text" class="form-control" placeholder="Usuario">
+                                <input type="text" class="form-control" placeholder="Usuario" id="usuario">
                             </div>
 
                             <label>Contraseña:</label>
@@ -58,10 +57,11 @@
                                 <span class="input-group-addon">
                                     <i class="nc-icon nc-key-25"></i>
                                 </span>
-                                <input type="text" class="form-control" placeholder="Contraseña">
+                                <input type="text" class="form-control" placeholder="Contraseña" id="contra">
                             </div>
                             <button class="btn btn-danger btn-block btn-round">Iniciar Sesion</button>
                         </form>
+                        <p id="mensaje" style="color:red"></p>
                     </div>
 
                 </div>
@@ -83,6 +83,6 @@
 
                 <!--  Paper Kit Initialization and functons -->
                 <script src="assets/js/paper-kit.js?v=2.1.0"></script>
-                </html>
+                <script src="js/app/login.js"></script>
 </html>
 
