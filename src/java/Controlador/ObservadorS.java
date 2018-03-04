@@ -66,6 +66,7 @@ public class ObservadorS extends HttpServlet {
             if (opc == 0) {
                 int pi;
                 pi=544856;
+//                pi=2454525;
                 ProfesorCursoDAO pc = new ProfesorCursoDAO();
                 ArrayList<ProfesorCurso> pcm = pc.getAllProCur(pi);
                 ArrayList<Curso> cursos=new ArrayList<>();
@@ -113,7 +114,19 @@ public class ObservadorS extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            String detalles=request.getParameter("detalles");
+            int calificacion=Integer.parseInt(request.getParameter("calificacion"));
+            int idEst=Integer.parseInt(request.getParameter("idEstudiante"));
+            ObservadorDAO o=new ObservadorDAO();
+            o.addObservador(detalles,calificacion,idEst);
+        } catch (SQLException ex) {
+            Logger.getLogger(ObservadorS.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(ObservadorS.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ObservadorS.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

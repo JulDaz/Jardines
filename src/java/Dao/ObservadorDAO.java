@@ -1,4 +1,4 @@
- /*
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -11,6 +11,7 @@ import Util.DbUtil;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -28,13 +29,21 @@ public class ObservadorDAO {
         connection = DbUtil.getConnection();
     }
 
+    public void addObservador(String detalles, int calificacion, int idEst) throws SQLException {
+        PreparedStatement preparedStatement = connection.prepareStatement("insert into observador(detalles,calificacion,idestudiante) values (?,?,?)");
+        preparedStatement.setString(1, detalles);
+        preparedStatement.setInt(2, calificacion);
+        preparedStatement.setInt(3, idEst);
+        preparedStatement.executeUpdate();
+    }
+
     public ArrayList<Estudiante> getEstudiantesByIDCurso(int id_curso) throws SQLException, URISyntaxException {
         ArrayList<Estudiante> estudiantes = new ArrayList<>();
         Statement statement = connection.createStatement();
         ResultSet rs = statement.executeQuery("select * from estudiante where idcurso=" + id_curso);
         while (rs.next()) {
             Estudiante c = new Estudiante();
-            c.setIdEstudiante(rs.getInt("documento"));            
+            c.setIdEstudiante(rs.getInt("documento"));
             c.setNombre(rs.getString("nombre"));
             estudiantes.add(c);
         }
@@ -65,4 +74,5 @@ public class ObservadorDAO {
         }
         return notasObs;
     }
+
 }

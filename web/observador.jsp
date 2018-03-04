@@ -40,13 +40,11 @@
                     <br>
                     <br>
                     <div class="container">
-                        <a class href="">
-                            <button type="button" class="btn btn-default btn-round"> Ver Observador</button>
+                        <a>
+                            <input type="button"  type="text" name="Ver Observaciones" class="btn btn-default btn-round" id="botonVisualizar">Visualizar
                         </a>
-
-
-                        <a  href="">
-                            <button type="button" class="btn btn-default btn-round">Hacer Observacion</button>
+                        <a>
+                            <input type="button"  type="text" name="Realizar Observaciones" class="btn btn-default btn-round" id="botonRealizar">Realizar
                         </a>
                         <br>
                         <br>
@@ -57,9 +55,6 @@
                                 <label style="color:white">Curso: </label>
                                 <select required name="curso" id="curso">
                                     <option value="" selected disabled>Seleccione una opcion</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>      
                                 </select> 
                                 &nbsp;
                                 &nbsp;
@@ -70,33 +65,18 @@
                                 <br>
                                 <br>
                                 <br>
-                                <table id="parrafo" class="table table-hover">
-                                    <tr>
-                                        <th style="color:white" >Descripcion</th>
-                                        <th style="color:white" >Calificacion</th>
-                                    </tr>
-                                    <tr>
-                                        <td style="color:white" >Mal</td>
-                                        <td style="color:white" >5</td> 
-                                    </tr>
-                                    <tr>
-                                        <td style="color:white" >Bien</td>
-                                        <td style="color:white" >3</td> 
-                                    </tr>
-                                    <tr>
-                                        <td style="color:white" >Regula</td>
-                                        <td style="color:white" >2</td> 
-                                    </tr>
+                                <table id="tablaObs" class="table table-hover" style="display: none;">
+                                    
                                 </table>
                             </div>  
                         </form>
-                        <form>
+                        <form id="AddObs" style="display: none;">
                             <div class="form-group" >
                                 <label style="color:white">Detalle:</label>
-                                <input class="form-control form-control-success" name="">                               
+                                <input  class="form-control form-control-success" name="" id="detalles">                               
                                 <br> 
                                 <label style="color:white">Calificacion: </label>
-                                <select required name="" id="">
+                                <select required name="" id="calificacion">
                                     <option value="" selected disabled style="color:black">Seleccione una opcion</option>
                                     <option value="5" style="color:green">5</option>  
                                     <option value="4" style="color:yellowgreen">4</option> 
@@ -118,16 +98,7 @@
     <script src="assets/js/popper.js" type="text/javascript"></script>
     <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
 
-    <!-- Switches -->
-    <script src="assets/js/bootstrap-switch.min.js"></script>
-
     <!--  Plugins for Slider -->
     <script src="assets/js/nouislider.js"></script>
-
-    <!--  Plugins for DateTimePicker -->
-    <script src="assets/js/moment.min.js"></script>
-    <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
-
-    <!--  Paper Kit Initialization and functons -->
-    <script src="assets/js/paper-kit.js?v=2.1.0"></script>
+    <script src="js/app/observador.js"></script>
 </html>

@@ -9,38 +9,63 @@
 //    casilla2.attr('required', false);
 //    return false;
 //});
-
-$('#botonVisualizar').click(function (){
-    $.ajax({
-        type: 'GET',
-        url: "ObservadorS",
-        //force to handle it as text
-        data: {
-            'opcion': "0"
-        },
-        dataType: "text",
-        success: function (data) {
-            
-        },
-        async: false 
+$(document).ready(function () {
+    $('#botonVisualizar').click(function () {
+        $.ajax({
+            type: 'GET',
+            url: "ObservadorS",
+            //force to handle it as text
+            data: {
+                'opcion': "0"
+            },
+            dataType: "text",
+            success: function (data) {
+                $('#tablaObs').removeAttr('style');
+                $('#AddObs').attr('style', 'display: none;');
+                var selectForm = $('#curso');
+                selectForm.empty();
+                selectForm.append('<option selected  value="" disabled>Seleccion un curso</option>');
+                var json = $.parseJSON(data);
+                console.log(json);
+                for (var i = 0; i < json.length; ++i)
+                {
+                    var opcion = "<option value=\"" + json[i].idCurso + "\">" + json[i].nombre + "</option>";
+                    selectForm.append(opcion);
+                }
+            },
+            async: false
+        });
+    });
+    
+    $('#botonRealizar').click(function () {
+        $.ajax({
+            type: 'GET',
+            url: "ObservadorS",
+            //force to handle it as text
+            data: {
+                'opcion': "0"
+            },
+            dataType: "text",
+            success: function (data) {
+                $('#AddObs').removeAttr('style');
+                $('#tablaObs').attr('style', 'display: none;');
+                var selectForm = $('#curso');
+                selectForm.empty();
+                selectForm.append('<option selected  value="" disabled>Seleccion un curso</option>');
+                var json = $.parseJSON(data);
+                console.log(json);
+                for (var i = 0; i < json.length; ++i)
+                {
+                    var opcion = "<option value=\"" + json[i].idCurso + "\">" + json[i].nombre + "</option>";
+                    selectForm.append(opcion);
+                }                          
+            },
+            async: false
+        });
     });
 });
 
-$('#botonRealizar').click(function (){
-    $.ajax({
-        type: 'GET',
-        url: "ObservadorS",
-        //force to handle it as text
-        data: {
-            'opcion': "0"
-        },
-        dataType: "text",
-        success: function (data) {
-            
-        },
-        async: false 
-    });
-});
+
 
 $('#botonCrear').on('submit', function () {
     $.ajax({
@@ -48,15 +73,15 @@ $('#botonCrear').on('submit', function () {
         url: "ObservadorS",
         //force to handle it as text
         data: {
-            'detalles': $('#'),
-            'calificacion' : $('#'),
-            'idEstudiante': $('#')
+            'detalles': $('#detalles'),
+            'calificacion': $('#calificacion'),
+            'idEstudiante': $('#estudiante').val()
         },
         dataType: "text",
         success: function (data) {
             
         },
-        async: false 
+        async: false
     });
 });
 
@@ -72,6 +97,7 @@ $('#curso').on('change', function () {
         },
         dataType: "text",
         success: function (data) {
+
             var selectForm = $('#estudiante');
             selectForm.empty();
             selectForm.append('<option selected  value="" disabled>Seleccion un estudiante</option>');
@@ -99,12 +125,13 @@ $('#estudiante').on('change', function () {
         },
         dataType: "text",
         success: function (data) {
-            var selectForm = $('#parrafo');
-            var json = $.parseJSON(data);
+            var selectForm = $('#tablaObs');
             selectForm.empty();
+            selectForm.append('<tr><td style="color:white" >Detalles</td><td style="color:white" >Calificacion</td> </tr>');
+            var json = $.parseJSON(data);
             for (var i = 0; i < json.length; ++i)
             {
-                var opcion = json[i].detalles + "," + json[i].calificacion;
+                var opcion = "<tr><td style=\"color:white\" >" + json[i].detalles + "</td><td style=\"color:white\" >" + json[i].calificacion + "</td> </tr>";
                 selectForm.append(opcion);
             }
         },
