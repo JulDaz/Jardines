@@ -93,7 +93,7 @@
                         <form>
                             <div class="form-group" >
                                 <label style="color:white">Detalle:</label>
-                                <input  class="form-control form-control-success" name="">                               
+                                <input class="form-control form-control-success" name="">                               
                                 <br> 
                                 <label style="color:white">Calificacion: </label>
                                 <select required name="" id="">

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md fixed-top navbar-transparent" color-on-scroll="500">
+<nav class="navbar navbar-expand-md fixed-top" color-on-scroll="500" style="background-color: black">
     <div class="container">
         <div class="navbar-translate">
             <button class="navbar-toggler navbar-toggler-right navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,13 +17,13 @@
                     <a href="gestionEstudiante.jsp"  class="nav-link"><i class="nc-icon nc-circle-10"></i> Gestion Estudiante</a>
                 </li>
                 <li class="nav-item">
-                    <a href="..."  class="nav-link"><i class="nc-icon nc-single-02"></i> Gestion Profesor</a>
+                    <a href="gestionProfesor.jsp"  class="nav-link"><i class="nc-icon nc-single-02"></i> Gestion Profesor</a>
                 </li>
                 <li class="nav-item">
-                    <a href="..." class="nav-link"><i class="nc-icon nc-ruler-pencil"></i> Gestion Curso</a>
+                    <a href="gestionCurso.jsp" class="nav-link"><i class="nc-icon nc-ruler-pencil"></i> Gestion Curso</a>
                 </li>     
                 <li class="nav-item">
-                    <a href="..."  class="nav-link"><i class="nc-icon nc-tile-56"></i> Gestion Materias</a>
+                    <a href="gestionMateria.jsp"  class="nav-link"><i class="nc-icon nc-tile-56"></i> Gestion Materia</a>
                 </li>
                 <li class="nav-item">
                     <a href="..."  class="nav-link"><i class="nc-icon nc-button-power"></i> Logout</a>

@@ -37,20 +37,20 @@
                     <br>
                     <br>
                     <br>
-                   
+                    
 
                     <div class="container">
                         <a class href="">
-                            <button type="button" class="btn btn-default btn-round"> Crear Estudiante</button>
+                            <button type="button" class="btn btn-default btn-round"> Crear Profesor</button>
                         </a>                      
                         <a  href="">
-                            <button type="button" class="btn btn-default btn-round">Editar Estudiante</button>
+                            <button type="button" class="btn btn-default btn-round">Editar Profesor</button>
                         </a>                      
                         <a  href="">
-                            <button   type="button" class="btn btn-default btn-round">Ver Estudiante</button>  
+                            <button   type="button" class="btn btn-default btn-round">Ver Profesor</button>  
                         </a>                       
                         <a  href="">
-                            <button   type="button" class="btn btn-default btn-round">Eliminar Estudiante</button>  
+                            <button   type="button" class="btn btn-default btn-round">Eliminar Profesor</button>  
                         </a>
                         
                     </div>
