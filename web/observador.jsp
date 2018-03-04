@@ -111,4 +111,5 @@
     <!--  Plugins for Slider -->
     <script src="assets/js/nouislider.js"></script>
     <script src="js/app/observador.js"></script>
+    <script src="js/app/log.js"></script>
 </html>

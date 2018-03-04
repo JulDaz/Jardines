@@ -3,6 +3,7 @@ $('#ingreso').on('submit', function () {
         type: 'GET',
         url: "Login",        
         data: {
+            'action':"ingreso",
             'usuario': $('#usuario').val(),
             'password': $('#contra').val()
         },
