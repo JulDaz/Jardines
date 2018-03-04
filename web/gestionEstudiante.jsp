@@ -39,55 +39,55 @@
                     <br>
                     <div class="container">
                         <a class href="">
-                            <button type="button" class="btn btn-default btn-round" id="botonCrear"> Crear Estudiante</button>
+                            <button type="text" class="btn btn-default btn-round" id="botonCrear"> Crear Estudiante</button>
                         </a>                      
                         <a  href="">
-                            <button type="button" class="btn btn-default btn-round" id="botonEditar">Editar Estudiante</button>
+                            <button type="text" class="btn btn-default btn-round" id="botonEditar">Editar Estudiante</button>
                         </a>                      
                         <a  href="">
-                            <button   type="button" class="btn btn-default btn-round" id="botonVer">Ver Estudiante</button>  
+                            <button   type="text" class="btn btn-default btn-round" id="botonVer">Ver Estudiante</button>  
                         </a>                       
                         <a  href="">
-                            <button   type="button" class="btn btn-default btn-round" id="botonEliminar">Eliminar Estudiante</button>  
+                            <button   type="text" class="btn btn-default btn-round" id="botonEliminar">Eliminar Estudiante</button>  
                         </a>
                         
                     </div>
                     <br>
              
-                    <form id="CrearE" style="display:none; ">
+                    <form id="CrearE" >
                         <div class="form-group">
                             <label style="color:white">Documento:</label>
-                            <input  class="form-control form-control-success" name="documento" value="">
+                            <input  class="form-control form-control-success" name="documento" >
                         </div>
                         <div class="form-group">
                             <label style="color:white" >Nombre:</label>
-                            <input  class="form-control form-control-success" name="nombre"  value="">
+                            <input  class="form-control form-control-success" name="nombre"  >
                         </div>
                         <div class="form-group">
                             <label style="color:white">Id Curso:</label>
-                            <input  class="form-control form-control-success" name="idcurso" value="">
+                            <input  class="form-control form-control-success" name="idcurso" >
                         </div> 
                         <div class="form-group">
                             <label style="color:white">Fecha de Nacimiento:</label>
-                            <input  class="form-control form-control-success" name="fechanacimiento" readonly="readonly" value="">
+                            <input  class="form-control form-control-success" name="fechanacimiento"  >
                         </div> 
                         <div class="form-group">
                             <div class="form-group">
                                 <label style="color:white">Direccion:</label>
-                                <input  class="form-control form-control-success" name="direccion" readonly="readonly" value="">
+                                <input  class="form-control form-control-success" name="direccion"  >
                             </div> 
                             <label style="color:white">Celular:</label>
-                            <input  class="form-control form-control-success" name="celularcontacto" readonly="readonly" value="">
+                            <input  class="form-control form-control-success" name="celularcontacto"  >
                         </div>
                         <div class="form-group">
                             <label style="color:white">Tipo de sangre:</label>
-                            <input  class="form-control form-control-success" name="tiposangre" readonly="readonly" value="">
+                            <input  class="form-control form-control-success" name="tiposangre"  >
                         </div> 
                         <div class="form-group">
                             <label style="color:white">RH:</label>
-                            <input  class="form-control form-control-success" name="rh" readonly="readonly" value="">
+                            <input  class="form-control form-control-success" name="rh"  >
                         </div> 
-                        <button type="submit" class="btn btn-neutral" name="Enviar">Enviar</button>
+                        <button type="submit" class="btn btn-neutral" id="enviarE">Enviar</button>
                     </form>
                     
                     
@@ -220,6 +220,6 @@
 
     <!--  Paper Kit Initialization and functons -->
     <script src="assets/js/paper-kit.js?v=2.1.0"></script>
-    <script src="js/app/gestionEstudiante.js"></script>
+    <script src="js/app/funciones.js"></script>
 </html>
 
