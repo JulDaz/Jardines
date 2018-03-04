@@ -39,16 +39,16 @@
                     <br>
                     <div class="container">
                         <a class href="">
-                            <button type="button" class="btn btn-default btn-round"> Crear Estudiante</button>
+                            <button type="button" class="btn btn-default btn-round" id="botonCrear"> Crear Estudiante</button>
                         </a>                      
                         <a  href="">
-                            <button type="button" class="btn btn-default btn-round">Editar Estudiante</button>
+                            <button type="button" class="btn btn-default btn-round" id="botonEditar">Editar Estudiante</button>
                         </a>                      
                         <a  href="">
-                            <button   type="button" class="btn btn-default btn-round">Ver Estudiante</button>  
+                            <button   type="button" class="btn btn-default btn-round" id="botonVer">Ver Estudiante</button>  
                         </a>                       
                         <a  href="">
-                            <button   type="button" class="btn btn-default btn-round">Eliminar Estudiante</button>  
+                            <button   type="button" class="btn btn-default btn-round" id="botonEliminar">Eliminar Estudiante</button>  
                         </a>
                         
                     </div>
@@ -220,5 +220,6 @@
 
     <!--  Paper Kit Initialization and functons -->
     <script src="assets/js/paper-kit.js?v=2.1.0"></script>
+    <script src="js/app/gestionEstudiante.js"></script>
 </html>
 

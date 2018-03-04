@@ -21,10 +21,11 @@ $(document).ready(function () {
             dataType: "text",
             success: function (data) {
                 $('#tablaObs').removeAttr('style');
+                $('#SelectCurso').removeAttr('style');
                 $('#AddObs').attr('style', 'display: none;');
                 var selectForm = $('#curso');
                 selectForm.empty();
-                selectForm.append('<option selected  value="" disabled>Seleccion un curso</option>');
+                selectForm.append('<option selected  value="" disabled>Seleccione un curso</option>');
                 var json = $.parseJSON(data);
                 console.log(json);
                 for (var i = 0; i < json.length; ++i)
@@ -49,9 +50,10 @@ $(document).ready(function () {
             success: function (data) {
                 $('#AddObs').removeAttr('style');
                 $('#tablaObs').attr('style', 'display: none;');
+                $('#SelectCurso').removeAttr('style');
                 var selectForm = $('#curso');
                 selectForm.empty();
-                selectForm.append('<option selected  value="" disabled>Seleccion un curso</option>');
+                selectForm.append('<option selected  value="" disabled>Seleccione un curso</option>');
                 var json = $.parseJSON(data);
                 console.log(json);
                 for (var i = 0; i < json.length; ++i)
@@ -99,7 +101,7 @@ $('#curso').on('change', function () {
 
             var selectForm = $('#estudiante');
             selectForm.empty();
-            selectForm.append('<option selected  value="" disabled>Seleccion un estudiante</option>');
+            selectForm.append('<option selected  value="" disabled>Seleccione un estudiante</option>');
             var json = $.parseJSON(data);
             for (var i = 0; i < json.length; ++i)
             {

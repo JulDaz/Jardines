@@ -38,23 +38,22 @@
                     <br>
                     <br>
                     <br>
-                    <br>
                     <div class="container">
                         <a>
-                            <input type="button"  type="text" name="VerObservaciones" class="btn btn-default btn-round" id="botonVisualizar">Visualizar
+                            <button type="button"  type="text" name="VerObservaciones" class="btn btn-default btn-round" id="botonVisualizar">Visualizar</button>
                         </a>
                         <a>
-                            <input type="button"  type="text" name="RealizarObservaciones" class="btn btn-default btn-round" id="botonRealizar">Realizar
+                            <button type="button"  type="text" name="RealizarObservaciones" class="btn btn-default btn-round" id="botonRealizar">Realizar</button>
                         </a>
                         <br>
                         <br>
                         <br>
-                        <form id="SelectCurso">                                
+                        <form id="SelectCurso" style="display: none;">                                
                             <div>
 
                                 <label style="color:white">Curso: </label>
                                 <select required name="curso" id="curso">
-                                    <option value="" selected disabled>Seleccione una opcion</option>
+                                    <option value="" selected disabled>Seleccione un curso</option>
                                 </select> 
                                 &nbsp;
                                 &nbsp;
@@ -66,7 +65,7 @@
                                 <br>
                                 <br>
                                 <table id="tablaObs" class="table table-hover" style="display: none;">
-                                    
+
                                 </table>
                             </div>  
                         </form>
