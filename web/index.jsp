@@ -2,6 +2,17 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
+    <%
+        Profesor p = (Profesor) request.getSession().getAttribute("profesor");
+        if (p != null) {
+            if (p.getTipoU() == 0) {
+                response.sendRedirect("/menuAdmin.jsp");
+            } else {
+                response.sendRedirect("/menuProfesor.jsp");
+            }
+        }
+    %>
+  <html lang="en">
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/png" href="assets/img/colegio.ico">
@@ -27,20 +38,19 @@
 
     </head>
     <body style="background-color:black">
-
         <div class="container">
             <div class="row">
                 <div class="col-md-4 ml-auto mr-auto">
-                    <div class="card card-register" style="background-color: grey">
-                        <h3 class="title" style="color:white" >Bienvenido</h3>
+                    <div class="card card-register">
+                        <h3 class="title">Bienvenido</h3>
 
-                        <form id="login" class="register-form">
+                        <form class="register-form">
                             <label>Usuario:</label>
                             <div class="input-group form-group-no-border">
                                 <span class="input-group-addon">
                                     <i class="nc-icon nc-single-02"></i>
                                 </span>
-                                <input type="text" class="form-control" placeholder="Usuario" id="usuario">
+                                <input type="text" class="form-control" placeholder="Usuario">
                             </div>
 
                             <label>Contraseña:</label>
@@ -48,23 +58,31 @@
                                 <span class="input-group-addon">
                                     <i class="nc-icon nc-key-25"></i>
                                 </span>
-                                <input type="text" class="form-control" placeholder="Contraseña" id="password">
+                                <input type="text" class="form-control" placeholder="Contraseña">
                             </div>
-                            <button type="submit "class="btn btn-default btn-block btn-round" name="enviar">Iniciar Sesion</button>
+                            <button class="btn btn-danger btn-block btn-round">Iniciar Sesion</button>
                         </form>
                     </div>
 
                 </div>
-            </div>
-        </div>
-    </body>
-    <script src="assets/js/jquery-3.2.1.js" type="text/javascript"></script>
-    <script src="assets/js/jquery-ui-1.12.1.custom.min.js" type="text/javascript"></script>
-    <script src="assets/js/popper.js" type="text/javascript"></script>
-    <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+                </body>
+                <script src="assets/js/jquery-3.2.1.js" type="text/javascript"></script>
+                <script src="assets/js/jquery-ui-1.12.1.custom.min.js" type="text/javascript"></script>
+                <script src="assets/js/popper.js" type="text/javascript"></script>
+                <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
 
-    <!--  Plugins for Slider -->
-    <script src="assets/js/nouislider.js"></script>
-    <script src="js/app/observador.js"></script>
+                <!-- Switches -->
+                <script src="assets/js/bootstrap-switch.min.js"></script>
+
+                <!--  Plugins for Slider -->
+                <script src="assets/js/nouislider.js"></script>
+
+                <!--  Plugins for DateTimePicker -->
+                <script src="assets/js/moment.min.js"></script>
+                <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+
+                <!--  Paper Kit Initialization and functons -->
+                <script src="assets/js/paper-kit.js?v=2.1.0"></script>
+                </html>
 </html>
 
