@@ -26,7 +26,7 @@ $('#verPerfil').click(function () {
 });
 $(document).ready(function () {
     
-    $('#enviarE').on('submit', function () {
+    $('#CrearE').on('submit', function () {
     $.ajax({
         type: 'POST',
         url: "EstudianteS",        

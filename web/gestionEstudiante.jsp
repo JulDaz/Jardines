@@ -1,6 +1,17 @@
+<%@page import="Modelo.Profesor"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
+    <%
+    Profesor p=(Profesor)request.getSession().getAttribute("profesor");
+    if(p!=null){
+        if(p.getTipoU()==1){
+            response.sendRedirect("menuProfesor.jsp");
+        }
+    }else{
+        response.sendRedirect("index.jsp");
+    }
+    %>
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/png" href="assets/img/colegio.ico">
@@ -57,37 +68,37 @@
                     <form id="CrearE" >
                         <div class="form-group">
                             <label style="color:white">Documento:</label>
-                            <input  class="form-control form-control-success" name="documento" >
+                            <input  class="form-control form-control-success" id="documento" >
                         </div>
                         <div class="form-group">
                             <label style="color:white" >Nombre:</label>
-                            <input  class="form-control form-control-success" name="nombre"  >
+                            <input  class="form-control form-control-success" id="nombre"  >
                         </div>
                         <div class="form-group">
                             <label style="color:white">Id Curso:</label>
-                            <input  class="form-control form-control-success" name="idcurso" >
+                            <input  class="form-control form-control-success" id="idcurso" >
                         </div> 
                         <div class="form-group">
                             <label style="color:white">Fecha de Nacimiento:</label>
-                            <input  class="form-control form-control-success" name="fechanacimiento"  >
+                            <input  class="form-control form-control-success" id="fechanacimiento"  >
                         </div> 
                         <div class="form-group">
                             <div class="form-group">
                                 <label style="color:white">Direccion:</label>
-                                <input  class="form-control form-control-success" name="direccion"  >
+                                <input  class="form-control form-control-success" id="direccion"  >
                             </div> 
                             <label style="color:white">Celular:</label>
-                            <input  class="form-control form-control-success" name="celularcontacto"  >
+                            <input  class="form-control form-control-success" id="celularcontacto"  >
                         </div>
                         <div class="form-group">
                             <label style="color:white">Tipo de sangre:</label>
-                            <input  class="form-control form-control-success" name="tiposangre"  >
+                            <input  class="form-control form-control-success" id="tiposangre"  >
                         </div> 
                         <div class="form-group">
                             <label style="color:white">RH:</label>
-                            <input  class="form-control form-control-success" name="rh"  >
+                            <input  class="form-control form-control-success" id="rh"  >
                         </div> 
-                        <button type="submit" class="btn btn-neutral" id="enviarE">Enviar</button>
+                        <button type="submit" class="btn btn-neutral">Enviar</button>
                     </form>
                     
                     
@@ -108,7 +119,7 @@
                         </div>
                         <div class="form-group">
                             <label style="color:white" >Nombre:</label>
-                            <input  class="form-control form-control-success" name="nombre"  value="">
+                            <input  class="form-control form-control-success"  value="">
                         </div>
                         <div class="form-group">
                             <label style="color:white">Id Curso:</label>
@@ -124,7 +135,7 @@
                                 <input  class="form-control form-control-success" name="direccion"  value="">
                             </div> 
                             <label style="color:white">Celular:</label>
-                            <input  class="form-control form-control-success" name="celularcontacto"  value="">
+                            <input  class="form-control form-control-success"   value="">
                         </div>
                         <div class="form-group">
                             <label style="color:white">Tipo de sangre:</label>
@@ -156,7 +167,7 @@
                         </div>
                         <div class="form-group">
                             <label style="color:white" >Nombre:</label>
-                            <input  class="form-control form-control-success" name="nombre" readonly="readonly"  value="">
+                            <input  class="form-control form-control-success"  readonly="readonly"  value="">
                         </div>
                         <div class="form-group">
                             <label style="color:white">Id Curso:</label>
@@ -172,7 +183,7 @@
                                 <input  class="form-control form-control-success" name="direccion" readonly="readonly" value="">
                             </div> 
                             <label style="color:white">Celular:</label>
-                            <input  class="form-control form-control-success" name="celularcontacto" readonly="readonly" value="">
+                            <input  class="form-control form-control-success"  readonly="readonly" value="">
                         </div>
                         <div class="form-group">
                             <label style="color:white">Tipo de sangre:</label>

@@ -7,6 +7,7 @@ package Controlador;
 
 import Dao.EstudianteDAO;
 import Dao.ObservadorDAO;
+import Modelo.Estudiante;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URISyntaxException;
@@ -77,18 +78,18 @@ public class EstudianteS extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            System.out.println("Hola");
-            String nombre=request.getParameter("nombre");
-            int documento=Integer.parseInt(request.getParameter("documento"));
-            int idcurso=Integer.parseInt(request.getParameter("idcurso"));
-            String fechanacimiento=request.getParameter("fechanacimiento");
-            int celularcontacto=Integer.parseInt(request.getParameter("celular"));
-            String direccion=request.getParameter("direccion");
-            String tiposangre=request.getParameter("tiposangre");
-            String rh=request.getParameter("rh");
-            System.out.println(documento+" "+idcurso);
+            Estudiante e=new Estudiante();
+            e.setNombre(request.getParameter("nombre"));
+            e.setIdEstudiante(Integer.parseInt(request.getParameter("documento")));
+            e.setIdCurso(Integer.parseInt(request.getParameter("idcurso")));
+            e.setFechaNacimiento(request.getParameter("fechanacimiento"));
+            e.setCelularContacto(request.getParameter("celularcontacto"));
+            e.setDireccion(request.getParameter("direccion"));
+            e.setTipoSangre(request.getParameter("tiposangre"));
+            e.setRh(request.getParameter("rh"));
+            System.out.println(e.toString());
             EstudianteDAO o=new EstudianteDAO();
-            o.addEstudiante(documento, nombre, celularcontacto, direccion, fechanacimiento, rh, tiposangre, idcurso);
+            o.addEstudiante(e);
             
         } catch (SQLException ex) {
             Logger.getLogger(EstudianteS.class.getName()).log(Level.SEVERE, null, ex);

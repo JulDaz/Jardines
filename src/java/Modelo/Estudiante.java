@@ -12,7 +12,7 @@ package Modelo;
 public class Estudiante {
     private int idEstudiante;
     private String nombre;
-    private int celularContacto;
+    private String celularContacto;
     private String direccion;
     private String fechaNacimiento;
     private String rh;
@@ -22,7 +22,7 @@ public class Estudiante {
     public Estudiante() {
     }
 
-    public Estudiante(int idEstudiante, String nombre, int celularContacto, String direccion, String fechaNacimiento, String rh, String tipoSangre, int idCurso) {
+    public Estudiante(int idEstudiante, String nombre, String celularContacto, String direccion, String fechaNacimiento, String rh, String tipoSangre, int idCurso) {
         this.idEstudiante = idEstudiante;
         this.nombre = nombre;
         this.celularContacto = celularContacto;
@@ -49,11 +49,11 @@ public class Estudiante {
         this.nombre = nombre;
     }
 
-    public int getCelularContacto() {
+    public String getCelularContacto() {
         return celularContacto;
     }
 
-    public void setCelularContacto(int celularContacto) {
+    public void setCelularContacto(String celularContacto) {
         this.celularContacto = celularContacto;
     }
 
@@ -95,6 +95,11 @@ public class Estudiante {
 
     public void setIdCurso(int idCurso) {
         this.idCurso = idCurso;
+    }
+
+    @Override
+    public String toString() {
+        return "Estudiante{" + "idEstudiante=" + idEstudiante + ", nombre=" + nombre + ", celularContacto=" + celularContacto + ", direccion=" + direccion + ", fechaNacimiento=" + fechaNacimiento + ", rh=" + rh + ", tipoSangre=" + tipoSangre + ", idCurso=" + idCurso + '}';
     }
     
     

@@ -41,16 +41,16 @@ public class EstudianteDAO {
         return estudiantes;
     }
 
-    public void addEstudiante(int idEstudiante, String nombre, int celularContacto, String direccion, String fechaNacimiento, String rh, String tipoSangre, int idCurso) throws SQLException {
-        PreparedStatement preparedStatement = connection.prepareStatement("insert into estudiante(documento,nombre,celularcontacto,direccion,fechanacimiento,rh,tiposangre,idcurso) values (?,?,?,?,?,?,?,?)");
-        preparedStatement.setInt(1, idEstudiante);
-        preparedStatement.setString(2, nombre);
-        preparedStatement.setInt(3, celularContacto);
-        preparedStatement.setString(4, direccion);
-        preparedStatement.setString(5, fechaNacimiento);
-        preparedStatement.setString(6, rh);
-        preparedStatement.setString(7, tipoSangre);
-        preparedStatement.setInt(8, idCurso);
+    public void addEstudiante(Estudiante est) throws SQLException {
+        PreparedStatement preparedStatement = connection.prepareStatement("insert into estudiante values (?,?,?,?,?,?,?,?)");
+        preparedStatement.setInt(1, est.getIdEstudiante());
+        preparedStatement.setString(2, est.getNombre());
+        preparedStatement.setString(3, est.getCelularContacto());
+        preparedStatement.setString(4, est.getDireccion());
+        preparedStatement.setString(5, est.getFechaNacimiento());
+        preparedStatement.setString(6, est.getRh());
+        preparedStatement.setString(7, est.getTipoSangre());
+        preparedStatement.setInt(8, est.getIdCurso());
         preparedStatement.executeUpdate();
     }
 }
