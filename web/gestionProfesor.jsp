@@ -37,7 +37,7 @@
                     <br>
                     <br>
                     <br>
-                    
+
 
                     <div class="container">
                         <a class href="">
@@ -52,7 +52,213 @@
                         <a  href="">
                             <button   type="button" class="btn btn-default btn-round">Eliminar Profesor</button>  
                         </a>
-                        
+                        <br>
+                        <br>
+
+
+
+                        <form id="CrearP" style="display:none; ">
+                            <div class="form-group">
+                                <label style="color:white">Cedula:</label>
+                                <input  class="form-control form-control-success" name="cedula"  value="">
+                            </div>
+                            <div class="form-group">
+                                <label style="color:white">Nombre:</label>
+                                <input  class="form-control form-control-success" name="nombre"  value="">
+                            </div>
+                            <div class="form-group">
+                                <label style="color:white" >Usuario:</label>
+                                <input  class="form-control form-control-success" name="usuario" r value="">
+                            </div>
+                            <div class="form-group">
+                                <label style="color:white" >Contraseña:</label>
+                                <input  class="form-control form-control-success" name="password"  value="">
+                            </div>
+                            <div class="form-group">
+                                <label style="color:white" >Tipo de Usuario:</label>
+                                <input  class="form-control form-control-success" name="tipousuario"  value="">
+                            </div>
+                            <div class="form-group">
+                                <label style="color:white">Fecha de Nacimiento:</label>
+                                <input  class="form-control form-control-success" name="fechanacimiento"  value="">
+                            </div> 
+                            <div class="form-group">
+                                <label style="color:white">Tipo de Sangre:</label>
+                                <input  class="form-control form-control-success" name="tiposangre"  value="">
+                            </div> 
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label style="color:white">RH:</label>
+                                    <input  class="form-control form-control-success" name="rh" value="">
+                                </div> 
+                                <label style="color:white">Correo:</label>
+                                <input  class="form-control form-control-success" name="correo"  value="">
+                            </div>
+                            <div class="form-group">
+                                <label style="color:white">Celular:</label>
+                                <input  class="form-control form-control-success" name="celular"  value="">
+                            </div> 
+                            <div class="form-group">
+                                <label style="color:white">Direccion:</label>
+                                <input  class="form-control form-control-success" name="direccion"  value="">
+                            </div> 
+                            <div class="form-group">
+                                <label style="color:white">Estudios:</label>
+                                <input  class="form-control form-control-success" name="estudios"  value="">
+                            </div> 
+                            <div class="form-group">
+                                <label style="color:white">Experiencia:</label>
+                                <input  class="form-control form-control-success" name="celular" value="">
+                            </div> 
+                            <button type="submit" class="btn btn-neutral" name="Enviar">Enviar</button>
+                        </form>
+
+
+
+                        <div  class="EditarP" class="form-group" style="display:none;" >
+                            <label style="color:white" >Buscar Profesor:</label>
+                            <input  class="form-control form-control-success" name="cedula" value="">
+                        </div>
+
+
+
+
+                        <form class="EditarP" style="display:none; ">
+                            <br>
+                            <div class="form-group">
+                                <label style="color:white">Cedula:</label>
+                                <input  class="form-control form-control-success" name="cedula"  value="">
+                            </div>
+                            <div class="form-group">
+                                <label style="color:white">Nombre:</label>
+                                <input  class="form-control form-control-success" name="nombre"  value="">
+                            </div>
+                            <div class="form-group">
+                                <label style="color:white" >Usuario:</label>
+                                <input  class="form-control form-control-success" name="usuario"  value="">
+                            </div>
+                            <div class="form-group">
+                                <label style="color:white" >Contraseña:</label>
+                                <input  class="form-control form-control-success" name="password"  value="">
+                            </div>
+                            <div class="form-group">
+                                <label style="color:white" >Tipo de Usuario:</label>
+                                <input  class="form-control form-control-success" name="tipousuario"  value="">
+                            </div>
+                            <div class="form-group">
+                                <label style="color:white">Fecha de Nacimiento:</label>
+                                <input  class="form-control form-control-success" name="fechanacimiento"  value="">
+                            </div> 
+                            <div class="form-group">
+                                <label style="color:white">Tipo de Sangre:</label>
+                                <input  class="form-control form-control-success" name="tiposangre"  value="">
+                            </div> 
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label style="color:white">RH:</label>
+                                    <input  class="form-control form-control-success" name="rh"  value="">
+                                </div> 
+                                <label style="color:white">Correo:</label>
+                                <input  class="form-control form-control-success" name="correo"  value="">
+                            </div>
+                            <div class="form-group">
+                                <label style="color:white">Celular:</label>
+                                <input  class="form-control form-control-success" name="celular"  value="">
+                            </div> 
+                            <div class="form-group">
+                                <label style="color:white">Direccion:</label>
+                                <input  class="form-control form-control-success" name="direccion" value="">
+                            </div> 
+                            <div class="form-group">
+                                <label style="color:white">Estudios:</label>
+                                <input  class="form-control form-control-success" name="estudios"  value="">
+                            </div> 
+                            <div class="form-group">
+                                <label style="color:white">Experiencia:</label>
+                                <input  class="form-control form-control-success" name="celular"  value="">
+                            </div> 
+                            <button type="submit" class="btn btn-neutral" name="Enviar">Enviar</button>
+                        </form>
+
+
+
+                        <div  class="VerP" class="form-group" style="display:none;" >
+                            <label style="color:white" >Buscar Profesor:</label>
+                            <input  class="form-control form-control-success" name="documento" value="">
+                        </div>
+
+
+
+                        <form class="VerP" style="display:none; ">
+                            <br>
+                            <div class="form-group">
+                                <label style="color:white">Cedula:</label>
+                                <input  class="form-control form-control-success" name="cedula" readonly="readonly" value="">
+                            </div>
+                            <div class="form-group">
+                                <label style="color:white">Nombre:</label>
+                                <input  class="form-control form-control-success" name="nombre" readonly="readonly" value="">
+                            </div>
+                            <div class="form-group">
+                                <label style="color:white" >Usuario:</label>
+                                <input  class="form-control form-control-success" name="usuario" readonly="readonly" value="">
+                            </div>
+                            <div class="form-group">
+                                <label style="color:white" >Contraseña:</label>
+                                <input  class="form-control form-control-success" name="password" readonly="readonly" value="">
+                            </div>
+                            <div class="form-group">
+                                <label style="color:white" >Tipo de Usuario:</label>
+                                <input  class="form-control form-control-success" name="tipousuario" readonly="readonly" value="">
+                            </div>
+                            <div class="form-group">
+                                <label style="color:white">Fecha de Nacimiento:</label>
+                                <input  class="form-control form-control-success" name="fechanacimiento" readonly="readonly" value="">
+                            </div> 
+                            <div class="form-group">
+                                <label style="color:white">Tipo de Sangre:</label>
+                                <input  class="form-control form-control-success" name="tiposangre" readonly="readonly" value="">
+                            </div> 
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label style="color:white">RH:</label>
+                                    <input  class="form-control form-control-success" name="rh" readonly="readonly" value="">
+                                </div> 
+                                <label style="color:white">Correo:</label>
+                                <input  class="form-control form-control-success" name="correo" readonly="readonly" value="">
+                            </div>
+                            <div class="form-group">
+                                <label style="color:white">Celular:</label>
+                                <input  class="form-control form-control-success" name="celular" readonly="readonly" value="">
+                            </div> 
+                            <div class="form-group">
+                                <label style="color:white">Direccion:</label>
+                                <input  class="form-control form-control-success" name="direccion" readonly="readonly" value="">
+                            </div> 
+                            <div class="form-group">
+                                <label style="color:white">Estudios:</label>
+                                <input  class="form-control form-control-success" name="estudios" readonly="readonly" value="">
+                            </div> 
+                            <div class="form-group">
+                                <label style="color:white">Experiencia:</label>
+                                <input  class="form-control form-control-success" name="celular" readonly="readonly" value="">
+                            </div> 
+
+                        </form>
+
+
+
+                        <form id="EliminarP" style="display:none; ">                                              
+                            <div class="form-group">
+                                <label style="color:white">Profesor a Eliminar:</label>
+                                <input  class="form-control form-control-success" name="cedula" value="">
+                            </div>
+
+                            <button type="submit" class="btn btn-neutral" name="Enviar">Enviar</button>
+                        </form>
+
+
+
                     </div>
                 </div>
             </div>
