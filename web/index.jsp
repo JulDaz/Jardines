@@ -57,11 +57,11 @@
                                 <span class="input-group-addon">
                                     <i class="nc-icon nc-key-25"></i>
                                 </span>
-                                <input type="text" class="form-control" placeholder="Contraseña" id="contra">
+                                <input type="password" class="form-control" placeholder="Contraseña" id="contra">
                             </div>
                             <button class="btn btn-danger btn-block btn-round">Iniciar Sesion</button>
                         </form>
-                        <p id="mensaje" style="color:red"></p>
+                        
                     </div>
 
                 </div>

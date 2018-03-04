@@ -1,6 +1,17 @@
+<%@page import="Modelo.Profesor"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
+     <%
+    Profesor p=(Profesor)request.getSession().getAttribute("profesor");
+    if(p!=null){
+        if(p.getTipoU()==1){
+            response.sendRedirect("menuProfesor.jsp");
+        }
+    }else{
+        response.sendRedirect("index.jsp");
+    }
+    %>
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/png" href="assets/img/colegio.ico">
