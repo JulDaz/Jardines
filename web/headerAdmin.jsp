@@ -26,7 +26,7 @@
                     <a href="gestionMateria.jsp"  class="nav-link"><i class="nc-icon nc-tile-56"></i> Gestion Materia</a>
                 </li>
                 <li class="nav-item">
-                    <a href="..."  class="nav-link"><i class="nc-icon nc-button-power"></i> Logout</a>
+                    <a id="logOut" class="nav-link"><i class="nc-icon nc-button-power"></i> Logout</a>
                 </li>
             </ul>
         </div>
