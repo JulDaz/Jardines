@@ -5,8 +5,16 @@
  */
 package Controlador;
 
+import Dao.ProfesorDAO;
+import Modelo.Profesor;
+import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.URISyntaxException;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -35,7 +43,7 @@ public class ProfesorS extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ProfesorS</title>");            
+            out.println("<title>Servlet ProfesorS</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet ProfesorS at " + request.getContextPath() + "</h1>");
@@ -56,7 +64,24 @@ public class ProfesorS extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            int cedula = Integer.parseInt(request.getParameter("cedula"));
+
+            ProfesorDAO pc = new ProfesorDAO();
+            Profesor pcm = pc.getProfesorById(cedula);
+
+            Gson g = new Gson();
+            String pasareEsto = g.toJson(pcm);
+            out.print(pasareEsto);
+        } catch (SQLException ex) {
+            Logger.getLogger(ProfesorS.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(ProfesorS.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ProfesorS.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 
     /**

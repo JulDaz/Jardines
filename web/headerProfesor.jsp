@@ -10,8 +10,8 @@
         </div>
         <div class="collapse navbar-collapse" id="navbarToggler">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a href="perfilProfesor.jsp"  class="nav-link"><i class=" nc-icon nc-badge"></i>Ver Perfil</a>
+                <li class="nav-item" >
+                    <a href="perfilProfesor.jsp"  class="nav-link"  ><i class=" nc-icon nc-badge"></i>Ver Perfil</a>
                 </li>
                 <li class="nav-item">
                     <a href="..."  class="nav-link"><i class="nc-icon nc-check-2"></i> Asistencia del Curso</a>
