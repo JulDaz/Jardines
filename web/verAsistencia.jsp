@@ -40,8 +40,8 @@
                         <table class="table table-striped" id="tabla" >
                             <thead>
                                 <tr>
-                                    <th>ID Estudiante</th>
                                     <th>Nombre Estudiante</th>
+                                    <th>Asistencia</th>
 
                                 </tr>
                             </thead>
