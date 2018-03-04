@@ -67,14 +67,13 @@ $(document).ready(function () {
 
 
 
-$('#botonCrear').on('submit', function () {
+$('#AddObs').on('submit', function () {
     $.ajax({
         type: 'POST',
-        url: "ObservadorS",
-        //force to handle it as text
+        url: "ObservadorS",        
         data: {
-            'detalles': $('#detalles'),
-            'calificacion': $('#calificacion'),
+            'detalles': $('#detalles').val(),
+            'calificacion': $('#calificacion').val(),
             'idEstudiante': $('#estudiante').val()
         },
         dataType: "text",
@@ -102,7 +101,6 @@ $('#curso').on('change', function () {
             selectForm.empty();
             selectForm.append('<option selected  value="" disabled>Seleccion un estudiante</option>');
             var json = $.parseJSON(data);
-            console.log(json);
             for (var i = 0; i < json.length; ++i)
             {
                 var opcion = "<option value=\"" + json[i].idEstudiante + "\">" + json[i].nombre + "</option>";
@@ -119,6 +117,7 @@ $('#estudiante').on('change', function () {
         type: 'GET',
         url: "ObservadorS",
         //force to handle it as text
+        
         data: {
             'opcion': "2",
             'estudiante': $('#estudiante').val()

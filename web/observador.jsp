@@ -41,10 +41,10 @@
                     <br>
                     <div class="container">
                         <a>
-                            <input type="button"  type="text" name="Ver Observaciones" class="btn btn-default btn-round" id="botonVisualizar">Visualizar
+                            <input type="button"  type="text" name="VerObservaciones" class="btn btn-default btn-round" id="botonVisualizar">Visualizar
                         </a>
                         <a>
-                            <input type="button"  type="text" name="Realizar Observaciones" class="btn btn-default btn-round" id="botonRealizar">Realizar
+                            <input type="button"  type="text" name="RealizarObservaciones" class="btn btn-default btn-round" id="botonRealizar">Realizar
                         </a>
                         <br>
                         <br>
@@ -72,11 +72,11 @@
                         </form>
                         <form id="AddObs" style="display: none;">
                             <div class="form-group" >
-                                <label style="color:white">Detalle:</label>
-                                <input  class="form-control form-control-success" name="" id="detalles">                               
+                                <label style="color:white" for="detalle">Detalle:</label>
+                                <input type="text" class="form-control form-control-success" name="detalle" id="detalles">                               
                                 <br> 
-                                <label style="color:white">Calificacion: </label>
-                                <select required name="" id="calificacion">
+                                <label for="calificacion" style="color:white">Calificacion: </label>
+                                <select required name="calificacion" id="calificacion">
                                     <option value="" selected disabled style="color:black">Seleccione una opcion</option>
                                     <option value="5" style="color:green">5</option>  
                                     <option value="4" style="color:yellowgreen">4</option> 

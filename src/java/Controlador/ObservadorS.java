@@ -120,6 +120,7 @@ public class ObservadorS extends HttpServlet {
             int idEst=Integer.parseInt(request.getParameter("idEstudiante"));
             ObservadorDAO o=new ObservadorDAO();
             o.addObservador(detalles,calificacion,idEst);
+            
         } catch (SQLException ex) {
             Logger.getLogger(ObservadorS.class.getName()).log(Level.SEVERE, null, ex);
         } catch (URISyntaxException ex) {
