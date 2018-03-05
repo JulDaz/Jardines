@@ -90,9 +90,9 @@ public class NotaS extends HttpServlet {
             if (opc == 1) {
                 int a = Integer.parseInt(request.getParameter("curso"));
                 NotaDAO notica = new NotaDAO();
-                ArrayList<Estudiante> estudiantes = notica.getNotaByIdEstudiante(a);
+                ArrayList<Nota> notas = notica.getNotaByIdEstudiante(a);
                 Gson g = new Gson();
-                String pasareEsto = g.toJson(estudiantes);
+                String pasareEsto = g.toJson(notas);
                 out.print(pasareEsto);
             }
             if (opc == 2) {
@@ -124,11 +124,12 @@ public class NotaS extends HttpServlet {
    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            String detalles=request.getParameter("detalles");
-            int calificacion=Integer.parseInt(request.getParameter("calificacion"));
-            int idEst=Integer.parseInt(request.getParameter("idEstudiante"));
+            float nota=Float.parseFloat(request.getParameter("nota"));
+            int IdEstudiante=Integer.parseInt(request.getParameter("idEstudiante"));
+            int IdTema=Integer.parseInt(request.getParameter("idTema"));
+            String DetallesExtra=request.getParameter("DetallesExtra");
             NotaDAO n=new NotaDAO();
-            n.addObservador(detalles,calificacion,idEst);
+            n.addNota( nota,IdEstudiante,IdTema, DetallesExtra);
             
         } catch (SQLException ex) {
             Logger.getLogger(NotaS.class.getName()).log(Level.SEVERE, null, ex);
