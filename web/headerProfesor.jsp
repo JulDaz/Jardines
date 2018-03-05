@@ -17,7 +17,7 @@
                     <a href="listaAsistencia.jsp"  class="nav-link"><i class="nc-icon nc-check-2"></i> Asistencia del Curso</a>
                 </li>
                 <li class="nav-item">
-                    <a href="..." class="nav-link"><i class="nc-icon nc-book-bookmark"></i> Notas del Curso</a>
+                    <a href="crearNotas.jsp" class="nav-link"><i class="nc-icon nc-book-bookmark"></i> Notas del Curso</a>
                 </li>
                 <li class="nav-item">
                     <a href="observador.jsp"  class="nav-link"><i class="nc-icon nc-paper"></i> Observador</a>

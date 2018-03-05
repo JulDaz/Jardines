@@ -5,8 +5,22 @@
  */
 package Controlador;
 
+import Dao.CursoDAO;
+import Dao.NotaDAO;
+import Dao.ProfesorCursoDAO;
+import Modelo.Curso;
+import Modelo.Estudiante;
+import Modelo.Nota;
+import Modelo.Profesor;
+import Modelo.ProfesorCurso;
+import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.URISyntaxException;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -56,7 +70,46 @@ public class NotaS extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            
+            int opc = Integer.parseInt(request.getParameter("opcion"));
+            if (opc == 0) {
+                Profesor p=(Profesor)request.getSession().getAttribute("profesor");
+                ProfesorCursoDAO pc = new ProfesorCursoDAO();
+                ArrayList<ProfesorCurso> pcm = pc.getAllProCur(p.getIdProfesor());
+                ArrayList<Curso> cursos=new ArrayList<>();
+                CursoDAO c=new CursoDAO();
+                for (ProfesorCurso profesorcurso : pcm) {                  
+                    cursos.add(c.getCursoById(profesorcurso.getIdCurso()));
+                }
+                Gson g = new Gson();
+                String pasareEsto = g.toJson(cursos);
+                out.print(pasareEsto);
+            }
+            if (opc == 1) {
+                int a = Integer.parseInt(request.getParameter("curso"));
+                NotaDAO notica = new NotaDAO();
+                ArrayList<Estudiante> estudiantes = notica.getNotaByIdEstudiante(a);
+                Gson g = new Gson();
+                String pasareEsto = g.toJson(estudiantes);
+                out.print(pasareEsto);
+            }
+            if (opc == 2) {
+                int estId = Integer.parseInt(request.getParameter("estudiante"));
+                NotaDAO notica = new NotaDAO();
+                ArrayList<Nota> notas = notica.getNotaByIdEstudiante(estId);
+                Gson g = new Gson();
+                String pasareEsto = g.toJson(notas);
+                out.print(pasareEsto);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(NotaS.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(NotaS.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(NotaS.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -68,9 +121,22 @@ public class NotaS extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+   protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            String detalles=request.getParameter("detalles");
+            int calificacion=Integer.parseInt(request.getParameter("calificacion"));
+            int idEst=Integer.parseInt(request.getParameter("idEstudiante"));
+            NotaDAO n=new NotaDAO();
+            n.addObservador(detalles,calificacion,idEst);
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(NotaS.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(NotaS.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(NotaS.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

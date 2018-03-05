@@ -56,12 +56,12 @@ public class NotaDAO {
         return nota;
     }
 
-    public void addNota(Nota notica) throws SQLException {
+    public void addNota(float nota, int IdEstudiante, int IdTema, String DetallesExtra) throws SQLException {
         PreparedStatement preparedStatement = connection.prepareStatement("insert into nota values (?,?,?,?)");
-        preparedStatement.setFloat(1, notica.getNota());
-        preparedStatement.setInt(2, notica.getIdEstudiante());
-        preparedStatement.setInt(3, notica.getIdTema());
-        preparedStatement.setString(4, notica.getDetallesExtra());
+        preparedStatement.setFloat(1, nota);
+        preparedStatement.setInt(2, IdEstudiante);
+        preparedStatement.setInt(3, IdTema);
+        preparedStatement.setString(4, DetallesExtra);
         preparedStatement.executeUpdate();
     }
 }
