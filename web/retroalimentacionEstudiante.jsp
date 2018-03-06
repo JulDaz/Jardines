@@ -49,7 +49,7 @@
                     <br>
                     <br>
                     <br>
-                    <br>
+                    
                     <div class="container">
                         <a>
                             <button type="button" class="btn btn-default btn-round" id="botonVerE">Buscar Estudiante</button>
@@ -61,16 +61,15 @@
                             <div>
 
                                 <label style="color:white">Curso: </label>
-                                <select required name="curso" id="curso">
+                                <select required name="curso" id="curso" class="form-control">
                                     <option value="" selected disabled>Seleccione un curso</option>
                                 </select> 
-                                &nbsp;
-                                &nbsp;
+                                <br>
                                 <label style="color:white" >Estudiante:</label>
-                                <select required name="estudiante" id="estudiante">
+                                <select required name="estudiante" id="estudiante" class="form-control">
                                     <option value="" selected  disabled>Seleccione un estudiante</option>
                                 </select>   
-                                <br>
+                                
                                 <br>
                                 <br>
 

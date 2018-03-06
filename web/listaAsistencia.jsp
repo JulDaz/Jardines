@@ -19,37 +19,48 @@
         <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
         <link href="assets/css/nucleo-icons.css" rel="stylesheet" />
     </head>
-    
-  
+
+
     <body style="background-color:black">
         <%@include file="headerProfesor.jsp" %>
-        
+
         <div class="container-fluid text-center">    
             <div class="row content">
                 <div class="col-sm-2 sidenav">
 
                 </div>
-          
+
                 <div class="col-sm-8 text-left"> 
-                    <h1>Lista Asistencia</h1>
-                    <p></p>
-                    <a href="verAsistencia.jsp"  class="nav-link"  ><i class=" nc-icon nc-badge"></i>Ver Asistencia</a>
-                    <input type="button" name="guardar" id="botonCargar" > Cargar Cursos 
-                    <hr>
-                    
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+
+
+
+                    <button type="button" name="guardar" id="botonCargar" class="btn btn-default btn-round"> Cargar Cursos </button>
+
+                    <a href="verAsistencia.jsp"  class="btn btn-default btn-round"  ><i class=" nc-icon nc-badge"></i>Ver Asistencia</a>
+
+
+
 
                     <form id="formulario" class="form-inline" >
-                      <SELECT  id="cursosProfesor">
-                              <OPTION></OPTION>
-                              
-                      </SELECT>
-                        
-                        <SELECT  id="fechas">
-                              <OPTION></OPTION>
-                              
-                      </SELECT>
-                        
-                        <table class="table table-striped" id="tabla" >
+                        <SELECT  id="cursosProfesor" class="form-control">
+                            <OPTION></OPTION>
+
+                        </SELECT>
+
+                        <SELECT  id="fechas" class="form-control">
+                            <OPTION></OPTION>
+
+                        </SELECT>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <table class="table table-striped" id="tabla" style="color: white" >
                             <thead>
                                 <tr>
                                     <th>ID Estudiante</th>
@@ -59,25 +70,25 @@
                             </thead>
 
                             <tbody>
-                            
+
                                 <tr>
 
                                     <td id="id_estudiante" ></td>
                                     <td id="nombre_estudiante"></td>
 
 
-                                 
+
                                 </tr>
-                              
+
 
                             </tbody>
                         </table>
-                        <button type="button" id="guardarAsistencia">Guardar</button> 
+                        <button type="button" id="guardarAsistencia" class="btn btn-default btn-round" >Guardar</button> 
 
-                       
+
                     </form>
-                                
-                    
+
+
 
 
                 </div>

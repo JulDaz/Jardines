@@ -2,7 +2,7 @@
 
 <html lang="en">
     <head>
-     <meta charset="utf-8" />
+        <meta charset="utf-8" />
         <link rel="icon" type="image/png" href="assets/img/colegio.ico">
         <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -19,8 +19,8 @@
         <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
         <link href="assets/css/nucleo-icons.css" rel="stylesheet" />
     </head>
-    
-  
+
+
     <body style="background-color:black">
         <%@include file="headerProfesor.jsp" %>
         <div class="container-fluid text-center">    
@@ -29,25 +29,33 @@
 
                 </div>
                 <div class="col-sm-8 text-left"> 
-                    <h1>Buscar lista Asistencia</h1>
-                    <p></p>
-                    <a href="listaAsistencia.jsp"  class="nav-link"  ><i class=" nc-icon nc-badge"></i>Volver</a>
-                    <input type="button" name="guardar" id="botonCargar" > Cargar Cursos 
-                    <hr>
-                    
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+
+                    <button type="button" name="guardar" id="botonCargar" class="btn btn-default btn-round" > Cargar Cursos</button> 
+
+                    <a href="listaAsistencia.jsp"  class="btn btn-default btn-round"  ><i class=" nc-icon nc-badge"></i>Volver</a>
+
+
+
 
                     <form id="formulario" class="form-inline" >
-                      <SELECT  id="cursosProfesor">
-                              <OPTION></OPTION>
-                              
-                      </SELECT>
-                        
-                        <SELECT  id="fechas">
-                              <OPTION></OPTION>
-                              
-                      </SELECT>
-                        
-                        <table class="table table-striped" id="tabla" >
+                        <SELECT  id="cursosProfesor" class="form-control">
+                            <OPTION></OPTION>
+
+                        </SELECT>
+
+                        <SELECT  id="fechas" class="form-control">
+                            <OPTION></OPTION>
+
+                        </SELECT>
+                        <br>
+                        <br>
+                        <br>
+                        <table class="table table-striped" id="tabla" style="color: white"  >
                             <thead>
                                 <tr>
                                     <th>Nombre Estudiante</th>
@@ -57,30 +65,24 @@
                             </thead>
 
                             <tbody>
-                            
+
                                 <tr>
 
                                     <td id="id_estudiante" ></td>
                                     <td id="nombre_estudiante"></td>
 
 
-                                    <td>
-                                        <SELECT id="opciones">
-                                            <OPTION value="0"></OPTION>
-                                            
-                                        </SELECT>
-                                    </td>
+
                                 </tr>
-                              
+
 
                             </tbody>
                         </table>
-                        <button type="button" id="guardarAsistencia">Guardar</button> 
 
-                       
+
                     </form>
-                                
-                    
+
+
 
 
                 </div>

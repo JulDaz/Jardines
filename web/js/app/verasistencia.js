@@ -73,11 +73,11 @@ $('#fechas').on('change', function () {
         success: function (data) {
             var selectForm = $('#tabla');
             selectForm.empty();
-            selectForm.append('<tr><td style="color:red" >Nombre</td><td style="color:red" >Asistencia</td> </tr>');
+            selectForm.append('<tr><td style="color:white" >Nombre</td><td style="color:white" >Asistencia</td> </tr>');
             var json = $.parseJSON(data);
             for (var i = 0; i < json.length; ++i)
             {
-                var opcion = "<tr><td style=\"color:red\" >" + json[i].nombre + "</td><td style=\"color:red\" >" + json[i].vino + "</td> </tr>";
+                var opcion = "<tr><td style=\"color:white\" >" + json[i].nombre + "</td><td style=\"color:white\" >" + json[i].vino + "</td> </tr>";
                 selectForm.append(opcion);
             }
         },

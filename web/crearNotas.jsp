@@ -66,11 +66,10 @@
                                 <select class="form-control" required name="curso" id="curso">
                                     <option value="" selected disabled>Seleccione un curso</option>
                                 </select> 
-                                &nbsp;
-                                &nbsp;
+                                <br>
                                 <label style="color:white" >Estudiante:</label>
                                 <br>
-                                <select required name="estudiante" id="estudiante">
+                                <select required name="estudiante" id="estudiante" class="form-control">
                                     <option value="" selected  disabled>Seleccione un estudiante</option>
                                 </select>   
                                 <br>
@@ -87,7 +86,7 @@
                                 <input type="text" class="form-control form-control-success" name="detalle" id="detalles">                               
                                 <br> 
                                 <label for="calificacion" style="color:white">Nota: </label>
-                                <select required name="calificacion" id="calificacion">
+                                <select required name="calificacion" id="calificacion" class="form-control">
                                     <option value="" selected disabled style="color:black">Seleccione una opcion</option>
                                     <option value="5" style="color:green">5</option>  
                                     <option value="4" style="color:yellowgreen">4</option> 

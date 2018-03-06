@@ -66,10 +66,9 @@
                                 <select class="form-control" required name="curso" id="curso">
                                     <option value="" selected disabled>Seleccione un curso</option>
                                 </select> 
-                                &nbsp;
-                                &nbsp;
-                                <label class="form-control" style="color:white" >Estudiante:</label>
-                                <select required name="estudiante" id="estudiante">
+                                <br>
+                                <label style="color:white" >Estudiante:</label>
+                                <select required name="estudiante" id="estudiante" class="form-control">
                                     <option value="" selected  disabled>Seleccione un estudiante</option>
                                 </select>   
                                 <br>
