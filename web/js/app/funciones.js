@@ -4,7 +4,7 @@ $('#verPerfil').click(function () {
         url: "ProfesorS",
         //force to handle it as text
         data: {
-            'cedula': "26587452"
+            
         },
         dataType: "text",
         success: function (data) {

@@ -66,11 +66,12 @@ public class ProfesorS extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            int cedula = Integer.parseInt(request.getParameter("cedula"));
+            Profesor p=(Profesor) request.getSession().getAttribute("profesor");
+            int cedula = p.getIdProfesor();
             ProfesorDAO pc = new ProfesorDAO();
             Profesor pcm = pc.getProfesorById(cedula);
             Gson g = new Gson();
-            String pasareEsto = g.toJson(pcm);
+            String pasareEsto = g.toJson(p);
             out.print(pasareEsto);
         } catch (SQLException ex) {
             Logger.getLogger(ProfesorS.class.getName()).log(Level.SEVERE, null, ex);

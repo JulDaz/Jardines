@@ -64,14 +64,14 @@ $(document).ready(function () {
             url: "AsistenciaS",
             //force to handle it as text
             data: {
-                'op':"2"
-
+                'op':"2",
+                'curso':$('#cursosProfesor').val()
             },
             dataType: "text",
             success: function (data) {
                 var selectForm = $('#tabla');
                
-                //selectForm.empty();
+                selectForm.empty();
                 selectForm.append('<option selected  value="" disabled></option>');
                 var json = $.parseJSON(data);
                 var ok = 'ok';
