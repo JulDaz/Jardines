@@ -5,11 +5,13 @@
  */
 package Dao;
 
+import Modelo.Asistencia;
 import Util.ConsultaAsistencia;
 import Util.DbUtil;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -38,6 +40,16 @@ public class AsistenciaDAO {
             asis.add(ca);
         }
         return asis;
+    }
+    
+    public void addAsistencia(Asistencia asistencia) throws SQLException {
+        PreparedStatement preparedStatement = connection.prepareStatement("insert into asistencia values (?,?,?,?)");
+        preparedStatement.setInt(1, asistencia.getIdCurso());
+        preparedStatement.setInt(2, asistencia.getIdEstudiante());
+        preparedStatement.setInt(3, asistencia.getIdFecha());
+        preparedStatement.setInt(4, asistencia.getVino() );
+       
+        preparedStatement.executeUpdate();
     }
     
 }

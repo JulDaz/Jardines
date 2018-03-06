@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import Dao.AsistenciaDAO;
 import Dao.CursoDAO;
 import Dao.EstudianteDAO;
 import Dao.FechaDAO;
@@ -13,6 +14,7 @@ import Modelo.Curso;
 import Modelo.Estudiante;
 import Modelo.Fecha;
 import Modelo.Profesor;
+import Modelo.Asistencia;
 import Modelo.ProfesorCurso;
 import com.google.gson.Gson;
 import java.io.IOException;
@@ -115,6 +117,32 @@ public class AsistenciaS extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
         response.setContentType("text/html;charset=UTF-8");
+         try { 
+         String[] idEstudiante =  request.getParameterValues("idEstudiante[]");
+         String idCurso = request.getParameter("idCurso");
+         String idFecha = request.getParameter("idFecha");
+         String[] vino = request.getParameterValues("vino[]");
+         
+         
+         for(int i=0; i<idEstudiante.length; i++){
+             
+             Asistencia asistencia = new Asistencia(Integer.parseInt(idCurso), Integer.parseInt(idEstudiante[i]), Integer.parseInt(idFecha),Integer.parseInt(vino[i]));
+            
+             AsistenciaDAO dao = new AsistenciaDAO();
+             dao.addAsistencia(asistencia);
+             
+         }
+         
+           } catch (SQLException ex) {
+                Logger.getLogger(AsistenciaS.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (URISyntaxException ex) {
+                Logger.getLogger(AsistenciaS.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(AsistenciaS.class.getName()).log(Level.SEVERE, null, ex);
+            }
+         
+            
+        
 
     }
 

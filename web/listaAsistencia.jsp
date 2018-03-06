@@ -2,22 +2,34 @@
 
 <html lang="en">
     <head>
-        <title>Lista de Asistencia</title>
-    <meta charset="utf-8" />
+        <meta charset="utf-8" />
         <link rel="icon" type="image/png" href="assets/img/colegio.ico">
         <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        
+        <title>Crear Asistencia</title>
+        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+        <meta name="viewport" content="width=device-width" />
+        <!-- Bootstrap core CSS     -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="assets/css/paper-kit.css?v=2.1.0" rel="stylesheet"/>
+        <!--  CSS for Demo Purpose, don't include it in your project     -->
+        <link href="assets/css/demo.css" rel="stylesheet" />
+        <!--     Fonts and icons     -->
+        <link href='http://fonts.googleapis.com/css?family=Montserrat:400,300,700' rel='stylesheet' type='text/css'>
+        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+        <link href="assets/css/nucleo-icons.css" rel="stylesheet" />
     </head>
     
   
-    <body>
-
+    <body style="background-color:black">
+        <%@include file="headerProfesor.jsp" %>
+        
         <div class="container-fluid text-center">    
             <div class="row content">
                 <div class="col-sm-2 sidenav">
 
                 </div>
+          
                 <div class="col-sm-8 text-left"> 
                     <h1>Lista Asistencia</h1>
                     <p></p>
@@ -54,12 +66,7 @@
                                     <td id="nombre_estudiante"></td>
 
 
-                                    <td>
-                                        <SELECT id="opciones">
-                                            <OPTION value="0">Presente</OPTION>
-                                            <OPTION value="1">Ausente</OPTION>
-                                        </SELECT>
-                                    </td>
+                                 
                                 </tr>
                               
 
