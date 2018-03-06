@@ -71,8 +71,7 @@ public class AsistenciaS extends HttpServlet {
                 int op = Integer.parseInt(request.getParameter("op"));
                 if (op == 0) {
                     int pi = p.getIdProfesor();
-                   // System.out.println("Esteee" + pi);
-                   // int pi = 544856;
+                   
                     ProfesorCursoDAO pc = new ProfesorCursoDAO();
                     ArrayList<ProfesorCurso> pcm = pc.getAllProCur(pi);
                     ArrayList<Curso> cursos = new ArrayList<>();
@@ -93,7 +92,7 @@ public class AsistenciaS extends HttpServlet {
                 }
 
                 if (op == 2) {
-                    int idCurso = 1;
+                    int idCurso = Integer.parseInt(request.getParameter("curso"));
                     EstudianteDAO dao = new EstudianteDAO();
                     ArrayList<Estudiante> estudiantes = dao.getEstudiantesByIDCurso(idCurso);
 
